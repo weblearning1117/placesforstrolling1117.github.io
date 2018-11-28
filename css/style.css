@@ -91,6 +91,7 @@ li {
     top: 1px;
 }
 .question {
+    position: relative;
     font-size: 30px;
     text-align: center;
     color: #fff;
@@ -227,6 +228,9 @@ animation: sectionBack-2 alternate forwards .5s;
     opacity: 0;
     transition: 1s;
     visibility: hidden;
+    position: absolute;
+    right: 20%;
+    top: 20%;
 }
 .back:hover {
     cursor: pointer;
