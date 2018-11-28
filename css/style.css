@@ -245,7 +245,7 @@ animation: sectionBack-2 alternate forwards .5s;
     transition: 1s;
     position: fixed;
     top: 13%;
-    right: 0;
+    right: 1px;
     background: #fff;
     padding: 0 20px;
     border-bottom-left-radius: 25px;
