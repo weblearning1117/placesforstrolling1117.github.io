@@ -658,24 +658,24 @@ function answer (answer1, answer2, answer3, answer4, question, answer, back) {
   
   if (many == '3') {
     if (order == '1') {
-      answer2.css('opacity', '0').css('transform',' translate(400px,0)');
-      answer3.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer2.css('opacity', '0').css('transform',' translate(75%,0)');
+      answer3.css('opacity', '0').css('transform',' translate(75%,0)');
       setTimeout(() => {
       answer1.css('transition', '.4s');
    answer1.css('transform', 'translate(' + (answerWidth + 10) + 'px,0)');   
       }, 500);
     }
     else if (order == '2') {
-      answer2.css('opacity', '0').css('transform',' translate(-400px,0)');
-      answer3.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer2.css('opacity', '0').css('transform',' translate(-75%,0)');
+      answer3.css('opacity', '0').css('transform',' translate(75%,0)');
       setTimeout(() => {
       answer1.css('transition', '.5s');
    answer1.css('transform', 'translate(0,0)');   
       }, 500);
     }
    else if (order == '3') {
-    answer2.css('opacity', '0').css('transform',' translate(-400px,0)');
-    answer3.css('opacity', '0').css('transform',' translate(-400px,0)');
+    answer2.css('opacity', '0').css('transform',' translate(-75%,0)');
+    answer3.css('opacity', '0').css('transform',' translate(-75%,0)');
     setTimeout(() => {
     answer1.css('transition', '.5s');
  answer1.css('transform', 'translate(-' + (answerWidth + 10) + 'px,0)');   
@@ -684,36 +684,36 @@ function answer (answer1, answer2, answer3, answer4, question, answer, back) {
   }
   if (many == '4') {
     if(order == '1') {
-      answer2.css('opacity', '0').css('transform',' translate(400px,0)');
-      answer3.css('opacity', '0').css('transform',' translate(400px,0)');
-      answer4.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer2.css('opacity', '0').css('transform',' translate(75%,0)');
+      answer3.css('opacity', '0').css('transform',' translate(75%,0)');
+      answer4.css('opacity', '0').css('transform',' translate(75%,0)');
       setTimeout(() => {
       answer1.css('transition', '.5s');
    answer1.css('transform', 'translate(' + (answerWidth + 10 + (answerWidth / 2)) + 'px,0)');   
       }, 500);
     }
    else if(order == '2') {
-    answer2.css('opacity', '0').css('transform',' translate(-400px,0)');
-    answer3.css('opacity', '0').css('transform',' translate(400px,0)');
-    answer4.css('opacity', '0').css('transform',' translate(400px,0)');
+    answer2.css('opacity', '0').css('transform',' translate(-75%,0)');
+    answer3.css('opacity', '0').css('transform',' translate(75%,0)');
+    answer4.css('opacity', '0').css('transform',' translate(75%,0)');
     setTimeout(() => {
     answer1.css('transition', '.5s');
  answer1.css('transform', 'translate(' +(10 + (answerWidth / 2)) + 'px,0)');   
     }, 500);
     }
    else if(order == '3') {
-    answer2.css('opacity', '0').css('transform',' translate(-400px,0)');
-    answer3.css('opacity', '0').css('transform',' translate(-400px,0)');
-    answer4.css('opacity', '0').css('transform',' translate(400px,0)');
+    answer2.css('opacity', '0').css('transform',' translate(-75%,0)');
+    answer3.css('opacity', '0').css('transform',' translate(-75%,0)');
+    answer4.css('opacity', '0').css('transform',' translate(75%,0)');
     setTimeout(() => {
     answer1.css('transition', '.5s');
  answer1.css('transform', 'translate(-' +(10 + (answerWidth / 2)) + 'px,0)');   
     }, 500);
     }
    else if(order == '4') {
-    answer2.css('opacity', '0').css('transform',' translate(-400px,0)');
-    answer3.css('opacity', '0').css('transform',' translate(-400px,0)');
-    answer4.css('opacity', '0').css('transform',' translate(-400px,0)');
+    answer2.css('opacity', '0').css('transform',' translate(-75%,0)');
+    answer3.css('opacity', '0').css('transform',' translate(-75%,0)');
+    answer4.css('opacity', '0').css('transform',' translate(-75%,0)');
     setTimeout(() => {
     answer1.css('transition', '.5s');
  answer1.css('transform', 'translate(-' + (answerWidth + 10 + (answerWidth / 2)) + 'px,0)');   
