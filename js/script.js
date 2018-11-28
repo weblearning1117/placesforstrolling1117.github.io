@@ -17,6 +17,7 @@ $(document).ready(function () {
   var answer_4 = '.answer4';
   var answer_5 = '.answer5';
   
+  var back = ' .back';
   var back_1 = ' .back1';
   var back_2 = ' .back2';
   var back_3 = ' .back3';
@@ -40,7 +41,9 @@ $(document).ready(function () {
   //переменные для алгоритма
 var campaign, amount, age, time;
   
-
+if(winWid < 992) {
+  $(back).css('top', ($(question_1).outerHeight() / 2) + 'px');
+}
 
 $(back_1).offset(function(i,val){
   return {top:val.top, left:val.left - answerWidth / 2};
