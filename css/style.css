@@ -41,9 +41,6 @@ h2:hover {
     color: rgb(75, 92, 243);
     font-weight: 1000;
     text-transform: uppercase;
-    background: linear-gradient(45deg,rgb(24, 38, 170)33%, rgb(75, 92, 243)33%, rgb(24, 38, 170));
-    background-clip: text;
-    -webkit-text-fill-color: transparent
 }
 
 .language {
