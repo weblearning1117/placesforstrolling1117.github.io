@@ -398,6 +398,10 @@ border-top-left-radius: 25px;
     .question1 .answer {
         line-height: 25px;
     }
+    .back {
+        right: 10px;
+        font-size: 20px;
+    }
 }
 @media (max-width: 767px) {
     .question1 .answer {
