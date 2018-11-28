@@ -4,6 +4,7 @@ body {
     font-family: 'Comfortaa';
     font-weight: 300;
     overflow-x: hidden;
+    overflow-y:hidden;
 }
 .midnightHeader.blue {
     background: none;
@@ -257,7 +258,7 @@ border-top-left-radius: 25px;
     transition: 1s;
     position: fixed;
     top: 21%;
-    right: -25%;
+    right: -100%;
     font-weight: 800;
 }
 .warning:hover {
