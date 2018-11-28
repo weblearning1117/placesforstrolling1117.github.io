@@ -1,0 +1,281 @@
+body {
+    background: linear-gradient(rgb(75, 92, 243), rgb(24, 38, 170)) no-repeat;
+    background-size: cover;
+    font-family: 'Comfortaa';
+    font-weight: 300;
+}
+p {
+    margin: 0;
+}
+h2:hover {
+    cursor: default;
+}
+.footer p:hover {
+    cursor: default;
+}
+.main:hover {
+    cursor: default;
+}
+.header {
+    width: 100%;
+    padding: 1px;
+   background: #fff;
+
+}
+
+.header .main {
+    display: inline;
+    font-size: 35px;
+    color: rgb(75, 92, 243);
+    font-weight: 1000;
+    text-transform: uppercase;
+    background: linear-gradient(45deg,rgb(24, 38, 170)33%, rgb(75, 92, 243)33%, rgb(24, 38, 170));
+    background-clip: text;
+    -webkit-text-fill-color: transparent
+}
+
+.language {
+    display: inline;
+    font-size: 20px;
+    color: rgb(75, 92, 243);
+    text-transform: uppercase;
+}
+
+.language:hover {
+    color: rgb(24, 39, 180);
+    text-decoration: none;
+}
+ul {
+    margin-bottom: 10px;
+    margin-top: 4px;
+}
+li {
+    margin: 0;
+}
+
+.header .center {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+}
+
+.header .right {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: flex-end;
+    margin-top: -50px;
+    margin-right: 10px;
+}
+.answer2 .fa-male {
+    position: relative;
+    left: 3px;
+}
+.answer2 .fa-female {
+    position: relative;
+    right: 4px;
+}
+.answer2 .fa-child {
+    font-size: 15px;;
+    position: relative;
+    top: 1px;
+}
+.question {
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    margin-top: 17px;
+    margin-bottom: 8px;
+    font-family: 'Acme';
+}
+.row {
+    perspective: 700px;
+}
+
+.answer {
+    font-size: 20px;
+    color: rgb(75, 92, 243);
+    font-family: 'Acme';
+    padding: 15px 55px;
+    text-align: center;
+    background: #fff;
+    border-radius: 48%;
+    margin-right: 10px;
+    transition: 1s;
+    z-index: 2;
+}
+.answer:hover {
+cursor: pointer;
+box-shadow: #fff 0px 0px 20px;
+}
+.footer{
+    text-align: center;
+    font-family: 'Acme';
+    background: #fff;
+    margin-top: 10px;
+    font-size: 20px;
+    color: rgb(75, 92, 243);
+    padding: 10px;
+}
+.section-1 {
+    display: block;
+}
+.section-1.active {
+    display: none;
+}
+.section-2 {
+    display: block;
+    position: relative;
+    right: -200px;
+    opacity: 0;
+}
+.section-2 .question {
+    margin-top: 33px;
+}
+.section-2 .answer {
+    margin-bottom: 40px;
+}
+.section-2 .question9 .answer {
+    margin-bottom: 40px;
+}
+.section-2 .question5 .answer {
+    margin-bottom: 0px;
+}
+.section-2.active {
+    display: none;
+}
+.animation-1 {
+animation: section-1 alternate forwards .4s;
+position: relative;
+right: 0;
+}
+.animation-2 {
+animation: section-2 alternate forwards .5s;
+}
+.animationBack-1 {
+animation: sectionBack-1 alternate forwards .4s;
+position: relative;
+right: 0;
+}
+.animationBack-2 {
+animation: sectionBack-2 alternate forwards .5s;
+}
+.main-back {
+    position: fixed;
+    top: 10%;
+    left: 5%;
+    font-size: 25px;
+    color: #fff;
+    display: none;
+}
+.main-back:hover {
+    cursor: pointer;
+}
+.main-back:hover .fa-undo {
+    transform: rotate(-360deg);
+}
+.main-back .fa-undo {
+    margin-left: 5px;
+    font-size: 20px;
+    transition: .6s;
+}
+.margin-right {
+    
+   margin-left: 7px;
+}
+.mt-0 {
+    margin-top: 0;
+}
+.fa-arrows-v {
+    color: #fff;
+}
+.reltop {
+    position: relative;
+    top: 15px;
+}
+.relright {
+    position: relative;
+    right: 12px;
+}
+.relrightyak {
+    position: relative;
+    right: 5px;
+}
+.back {
+    font-size: 30px;
+    color: #fff;
+    display: none;
+    opacity: 0;
+    transition: 1s;
+}
+.back:hover {
+    cursor: pointer;
+}
+.back:hover .fa {
+    transform: rotate(-360deg);
+    transition: .7s;
+}
+.fa {
+    transition: 1s;
+}
+.next {
+    font-size: 30px;
+    color: #fff;
+    transition: 1s;
+    position: fixed;
+    top: 10%;
+    right: 5%;
+}
+.disabled {
+   display: none; 
+}
+.next:hover {
+    cursor: pointer;
+}
+.next:hover .fa {
+    position: relative;
+    margin-left: 10px;
+    transition: .7s;
+}
+@keyframes section-1 {
+    100% {
+       opacity: 0;
+       right: 650px;
+    }
+}
+@keyframes section-2 {
+    60% {
+        right: 50px;
+    }
+    100% {
+        right: 0;
+        opacity: 1;
+    }
+}
+@keyframes sectionBack-1 {
+    100% {
+       opacity: 0;
+       right: -650px;
+    }
+}
+@keyframes sectionBack-2 {
+    60% {
+        right: 50px;
+    }
+    100% {
+        right: 0;
+        opacity: 1;
+    }
+}
+@media (max-width: 1200px) {
+    .question h2 {
+        font-size: 25px;
+    }
+    .question2 .answer1 .fa {
+        font-size: 15px;
+    }
+    .answer p{
+        font-size: 16px;
+    }
+}
