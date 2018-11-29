@@ -41,6 +41,7 @@ h2:hover {
     color: rgb(75, 92, 243);
     font-weight: 1000;
     text-transform: uppercase;
+
 }
 
 .language {
@@ -146,7 +147,7 @@ transition: all 1s, box-shadow .3s;
     margin-top: 35.5px;
 }
 .section-2 .answer {
-    margin-bottom: 50px;
+    margin-bottom: 17.4px;
 }
 .section-2 .question9 .answer {
     margin-bottom: 40px;
@@ -382,14 +383,31 @@ border-top-left-radius: 25px;
         font-size: 16px;
     }
 }
-@media (max-width: 838px) {
-    .answer {
-       padding: 8px 43px;
+@media (max-width: 1200px) {
+    .question6 .answer {
+     padding: 8px 30px;
+    }
+    .relright {
+        right: 0;
+    }
+    .relrightyak {
+        right: 0;
+    }
+    .reltop {
+        top: 15px;
     }
 }
 @media (max-width: 992px) {
     .question1  .answer4{
       margin-top: 5px;
+    } 
+    .question6  .answer2 p {
+      position: relative;
+      top: 15px
+    } 
+    .question6  .answer10 p {
+        position: relative;
+        top: 15px
     } 
     .question1 .answer {
         line-height: 25px;
@@ -397,6 +415,7 @@ border-top-left-radius: 25px;
     .back {
         right: 10px;
         font-size: 20px;
+        top: 10px;
     }
     .next {
         font-size: 20px;
@@ -409,9 +428,28 @@ border-top-left-radius: 25px;
         font-size: 20px;
     }
 }
+@media (max-width: 838px) {
+    .answer {
+       padding: 8px 43px;
+    }
+}
 @media (max-width: 767px) {
     .question1 .answer {
         line-height: 18px;
+    }
+    .question6 .answer p {
+        top: 10px;
+    }
+    .question6 .answer2 p {
+        top: 0;
+    }
+    .question6 .answer10 p {
+        top: 0;
+    }
+}
+@media (max-width: 570px) {
+    .question6 .answer7 {
+        padding: 8px 5px;
     }
 }
 @media (max-width: 537px) {
@@ -438,6 +476,9 @@ border-top-left-radius: 25px;
         .question3 .answer {
             padding: 8px 30px;
         } 
+        .question6 .answer {
+            padding: 8px 10px;
+        } 
 }
 @media (max-width: 384px) {
     .answer {
@@ -455,6 +496,9 @@ border-top-left-radius: 25px;
             .question1 .answer {
             padding: 12px 10px;
             }
+            .question6 .answer p{
+           font-size: 14px;
+            }
         .answer {
             padding: 8px 10px;
             }
@@ -463,4 +507,10 @@ border-top-left-radius: 25px;
     .answer {
         padding: 8px 10px;
         }
+        .question6 .answer p{
+            font-size: 13px;
+             }
+        .question6 .answer{
+            padding: 8px 5px;
+             }
 }
