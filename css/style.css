@@ -263,7 +263,7 @@ border-top-left-radius: 25px;
     transition: 1s;
     position: fixed;
     top: 21%;
-    right: -100%;
+    right: -200px;
     font-weight: 800;
 }
 .warning:hover {
@@ -407,7 +407,13 @@ border-top-left-radius: 25px;
 @media (max-width: 537px) {
     .answer {
     padding: 8px 35px;
+    font-size: 10px;
     }
+    .question1 .answer {
+        line-height: 22px;
+    }
+}
+@media (max-width: 513px) {
     .question1 .answer {
         line-height: 22px;
     }
