@@ -646,7 +646,7 @@ $('.next').on('click', function () {
 
 function answer (answer1, answer2, answer3, answer4, question, answer, back) {
  
-    back.css('visibility', 'visible')
+   
   question.css('position', 'relative')
   order = answer1.attr('data-order');
   many = question.attr('data-many');
@@ -788,6 +788,7 @@ function answer (answer1, answer2, answer3, answer4, question, answer, back) {
 
   setTimeout(() => {
    answer1.css('transition', '0s');
+   back.css('visibility', 'visible')
  }, 1000);
   setTimeout(() => {
     answer2.css('visibility', 'hidden');
