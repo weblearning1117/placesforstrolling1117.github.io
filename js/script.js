@@ -30,6 +30,7 @@ $(document).ready(function () {
   var order, many;
   
   
+ var htmlHeight = $('html').outerHeight();
  var questionHeight = $(question_6).outerHeight();
  var answerHeight = $(answers).outerHeight();
  var answerHeightNoPad = $(answer_1).height();
@@ -638,6 +639,13 @@ $('.next').on('click', function () {
   $('.warning').addClass('active');
   setTimeout(() => {
     $('.warning').css('transition', '.5s').css('right', '1%');
+    $(function() {
+   
+        $('html, body').animate({
+          scrollTop: htmlHeight
+        }, 400);
+        return false;
+      })
   }, 200);
  }
 });
