@@ -382,6 +382,12 @@ border-top-left-radius: 25px;
     .answer p{
         font-size: 16px;
     }
+    .next {
+        font-size: 20px;
+    }
+    .warning {
+        font-size: 16px;
+    }
 }
 @media (max-width: 1200px) {
     .question6 .answer {
