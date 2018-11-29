@@ -436,8 +436,11 @@ border-top-left-radius: 25px;
         .question1 .answer {
             line-height: 16px;
         }
-       .question3 .answer {
+       .question3 .answer3 {
             padding: 8px 10px;
+            }
+       .question3 .answer {
+            padding: 8px 15px;
             }
             .question1 .answer {
             padding: 12px 10px;
