@@ -544,7 +544,7 @@ $('.section-1 .answer').on('click', function () {
   if ($('.question1').hasClass('active') && $('.question2').hasClass('active') && $('.question3').hasClass('active') && $('.question4').hasClass('active')) {
     $('.warning').addClass('active');
     setTimeout(() => {
-      $('.warning').css('transition', '.5s').css('right', '-25%');
+      $('.warning').css('transition', '.5s').css('right', '-400px');
     }, 200);
   }
   
