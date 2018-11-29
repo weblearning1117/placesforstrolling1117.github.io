@@ -41,13 +41,8 @@ $(document).ready(function () {
   //переменные для алгоритма
 var campaign, amount, age, time;
   
-if(winWid < 992) {
-  $(back).css('top', ($(question_1).outerHeight() / 2) + 'px');
-}
 
-$(back_1).offset(function(i,val){
-  return {top:val.top, left:val.left - answerWidth / 2};
-});
+
 
 $(question_3 + answers).on('click', function () { 
   if($(question_3).hasClass('off')) {
