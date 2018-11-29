@@ -249,12 +249,12 @@ animation: sectionBack-2 alternate forwards .5s;
     color: rgb(75, 92, 243);
     transition: 1s;
     position: fixed;
-    top: 13%;
-    right: 1px;
+    top: 15%;
+    right: 0;
     background: #fff;
     padding: 0 20px;
     border-bottom-left-radius: 25px;
-border-top-left-radius: 25px;
+border-top-left-radius: 25px; 
 }
 .warning {
     display: none;
@@ -396,6 +396,16 @@ border-top-left-radius: 25px;
     }
     .back {
         right: 10px;
+        font-size: 20px;
+    }
+    .next {
+        font-size: 20px;
+    }
+    .main-back {
+        font-size: 20px;
+        left: 0;
+    }
+    .main-back .fa {
         font-size: 20px;
     }
 }
