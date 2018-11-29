@@ -58,7 +58,12 @@ $(question_3 + answers).on('click', function () {
  
  })
 
-
+$(answers).on('click', function () { 
+   $(back).addClass('off');
+   setTimeout(() => {
+    $(back).removeClass('off');
+   }, 1100);
+ })
 
   //1-й вопрос
   $(question_1 + answer_1).on('click', function () {
