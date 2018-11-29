@@ -415,7 +415,7 @@ border-top-left-radius: 25px;
 }
 @media (max-width: 513px) {
     .question1 .answer {
-        line-height: 22px;
+        line-height: 16px;
     }
 }
 @media (max-width: 474px) {
@@ -436,6 +436,15 @@ border-top-left-radius: 25px;
         .question1 .answer {
             line-height: 16px;
         }
+       .question3 .answer {
+            padding: 8px 10px;
+            }
+            .question1 .answer {
+            padding: 12px 10px;
+            }
+        .answer {
+            padding: 8px 10px;
+            }
 }
 @media (max-width: 360px) {
     .answer {
