@@ -3,6 +3,7 @@ $(document).ready(function () {
 
   //переменные ответы и вопросы
 
+  var questions = ' .question ';
   var question_1 = ' .question1 ';
   var question_2 = ' .question2 ';
   var question_3 = ' .question3 ';
@@ -60,10 +61,20 @@ $(question_3 + answers).on('click', function () {
  })
 
 $(answers).on('click', function () { 
+  
    $(back).addClass('off');
    setTimeout(() => {
     $(back).removeClass('off');
    }, 1100);
+
+   setTimeout(() => {
+    $('.click').addClass('unclick');
+    $('.click').removeClass('click');
+   }, 10);
+   setTimeout(() => {
+    $('.unclick').addClass('click');
+    $('.unclick').removeClass('unclick');
+   }, 1000);
  })
 
   //1-й вопрос
