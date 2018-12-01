@@ -1,6 +1,6 @@
 $(document).ready(function () {   
   var winWid = window.innerWidth;
-
+ 
   //переменные ответы и вопросы
 
   var questions = ' .question ';
@@ -17,6 +17,7 @@ $(document).ready(function () {
   var answer_3 = '.answer3';
   var answer_4 = '.answer4';
   var answer_5 = '.answer5';
+  var answer_6 = '.answer6';
   
   var back = ' .back';
   var back_1 = ' .back1';
@@ -34,6 +35,10 @@ $(document).ready(function () {
  var htmlHeight = $('html').outerHeight();
  var questionHeight = $(question_6).outerHeight();
  var answerHeight = $(answers).outerHeight();
+ var warningHeight = $('.warning').outerHeight();
+ var warningWidth = $('.warning').outerWidth();
+ var footerHeight = $('.footer').outerHeight();
+ var footerWidth = $('.footer').outerWidth();
  var answerHeightNoPad = $(answer_1).height();
  var answerWidth = $(answers).outerWidth();
   $(answers).click(function () {
@@ -61,7 +66,8 @@ $(question_3 + answers).on('click', function () {
  })
 
 $(answers).on('click', function () { 
-  
+  $('.warning').css('bottom', footerHeight + 'px');
+  $('.warning').css('left', (footerWidth / 2) - (warningWidth / 2) + 'px');
    $(back).addClass('off');
    setTimeout(() => {
     $(back).removeClass('off');
@@ -274,7 +280,7 @@ else {
   //6-й вопрос
 $('.question6 .answer1').on('click', function () {
   if ($(question_6).hasClass('click')) {
-    answer2($('.question6 .answer1'), $('.question6 .answer2'), $('.question6 .answer3'), $('.question6 .answer4'),$('.question6 .answer5'),$('.question6 .answer6'),$('.question6 .answer7'),$('.question6 .answer8'),$('.question6 .answer9'),$('.question6 .answer10'),$('.question6 .answer11'), $('.question6'),$('.question6 .answer'), $(back_6));
+    answer2($(question_6 + answer_1), $(question_6 + answer_2), $(question_6 + answer_3), $(question_6 + answer_4),$(question_6 + answer_5),$(question_6 + answer_6),$('.question6 .answer7'),$('.question6 .answer8'),$('.question6 .answer9'),$('.question6 .answer10'),$('.question6 .answer11'), $('.question6'),$('.question6 .answer'), $(back_6));
   }
   else {
     return false;
@@ -515,28 +521,19 @@ $(back_7).on('click', function () {
         $(question_6).addClass('click');
         }, 1200);
 })
-$(back_8).on('click', function () {
-  $(question_6 + answers).css('opacity', '0');
-  $(question_6).removeClass('active');
-    $(back_8).css('opacity', '0');
- 
-    setTimeout(() => {  
-      $('.zxc').css('margin-bottom', $(question_6 + answers).css('margin-bottom'));
-      $('.zxc').css('margin-top', '0px');
-      $('.zxc').css('transition', '0s');
-      $(question_6 + answers).css('display', 'block');
-      $(back_8).css('display', 'none');
-      }, 1000);
-    setTimeout(() => {  
-      $(question_6 + answers).css('opacity', '1');
-      }, 1050);
-    setTimeout(() => {  
-      $('.zxc').css('transition', '1s');
-      $('.zxc').removeClass('zxc');
-      }, 1100);
-      setTimeout(() => {  
-        $(question_6).addClass('click');
-        }, 1200);
+$(back_6).on('click', function () {
+  if (!$(this).hasClass('off')) {
+
+    $(question_6 + answers).css('visibility', 'visible').css('opacity', '1').css('transform', 'translate(0,0)').removeClass('go-left').removeClass('go-right');    
+    $(question_6).removeClass('active');
+      $(back_6).css('opacity', '0');
+      $(back_6).css('visibility', 'hidden');
+     $(question_6).removeClass('active');
+    $(question_6).addClass('click');
+  }
+  else {
+    return false;
+  }
 })
 
 
@@ -559,11 +556,10 @@ $('.section-1 .answer').on('click', function () {
   console.log(age);
   
   if ($('.question1').hasClass('active') && $('.question2').hasClass('active') && $('.question3').hasClass('active') && $('.question4').hasClass('active')) {
-    $('.warning').addClass('active');
-    setTimeout(() => {
-      $('.warning').css('transition', '.5s').css('right', '-400px');
-    }, 200);
-  }
+    $('.warning').slideUp(600);
+     
+  
+  } 
   
   if ($('.question1').hasClass('active') && $('.question2').hasClass('active') && $('.question3').hasClass('active') && $('.question4').hasClass('active') && $('.next').hasClass('active')) {
     $('.section-1').removeClass('animationBack-2');
@@ -629,9 +625,10 @@ $('.next').on('click', function () {
  
   if ($('.question1').hasClass('active') && $('.question2').hasClass('active') && $('.question3').hasClass('active') && $('.question4').hasClass('active')) {
   $('.next').addClass('active');
+  
   }
   if ($('.question1').hasClass('active') && $('.question2').hasClass('active') && $('.question3').hasClass('active') && $('.question4').hasClass('active') && $('.next').hasClass('active')) {
-  
+    
     $('.section-1').removeClass('animationBack-2');
   $('.section-2').removeClass('animationBack-1');
   $('.next').addClass('active').addClass('disabled');
@@ -647,17 +644,16 @@ $('.next').on('click', function () {
     }, 500)
   }
  else if (!$('.question1').hasClass('active') || !$('.question2').hasClass('active') || !$('.question3').hasClass('active') || !$('.question4').hasClass('active') || !$('.next').hasClass('active')){
-  $('.warning').addClass('active');
-  setTimeout(() => {
-    $('.warning').css('transition', '.5s').css('right', '1%');
-    $(function() {
+  $(function() {
    
-        $('html, body').animate({
-          scrollTop: htmlHeight
-        }, 400);
-        return false;
-      })
-  }, 200);
+    $('html, body').animate({
+      scrollTop: htmlHeight
+    }, 600);
+  
+  })
+  setTimeout(() => {
+    $('.warning').slideDown(300);
+  }, 400);
  }
 });
 
@@ -671,7 +667,6 @@ $('.next').on('click', function () {
 function answer (answer1, answer2, answer3, answer4, question, answer, back) {
  
    
-  question.css('position', 'relative')
   order = answer1.attr('data-order');
   many = question.attr('data-many');
   answer.css('transition', '1s');
@@ -719,6 +714,7 @@ function answer (answer1, answer2, answer3, answer4, question, answer, back) {
       answer3.css('opacity', '0').css('transform',' translate(25%,0)');
       answer4.css('opacity', '0').css('transform',' translateY(25%)');
       setTimeout(() => {
+        answer1.css('transform', 'translateY(' + (answerHeight / 2) + 'px)'); 
       answer1.css('transition', '.5s');
       }, 500);
       }
@@ -737,7 +733,7 @@ function answer (answer1, answer2, answer3, answer4, question, answer, back) {
       answer4.css('opacity', '0').css('transform',' translate(25%,0)');
       setTimeout(() => {
       answer1.css('transition', '.5s');
-   answer1.css('transform', 'translateY(-' + (answerHeight + 10) + 'px)');   
+   answer1.css('transform', 'translateY(-' + (answerHeight / 2) + 'px)');   
       }, 500);
       }
     }
@@ -858,6 +854,206 @@ function answer (answer1, answer2, answer3, answer4, question, answer, back) {
 
 function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8,answer9,answer10,answer11,question,answer, back) {
   
+  order = answer1.attr('data-order');
+  many = question.attr('data-many');
+  answer.css('transition', '1s');
+  question.addClass('active');
+  question.removeClass('click');
+  if (winWid < 992) {
+    if (many == '3') {
+      if (order == '1') {
+        answer2.css('opacity', '0').css('transform',' translate(25%,0)');
+        answer3.css('opacity', '0').css('transform',' translate(25%,0)');
+        setTimeout(() => {
+        answer1.css('transition', '.4s');
+     answer1.css('transform', 'translate(' + (answerWidth + 10) + 'px,0)');   
+        }, 500);
+      }
+      else if (order == '2') {
+        answer2.css('opacity', '0').css('transform',' translate(-25%,0)');
+        answer3.css('opacity', '0').css('transform',' translate(25%,0)');
+        setTimeout(() => {
+        answer1.css('transition', '.5s');
+     answer1.css('transform', 'translate(0,0)');   
+        }, 500);
+      }
+     else if (order == '3') {
+      answer2.css('opacity', '0').css('transform',' translate(-25%,0)');
+      answer3.css('opacity', '0').css('transform',' translate(-25%,0)');
+      setTimeout(() => {
+      answer1.css('transition', '.5s');
+   answer1.css('transform', 'translate(-' + (answerWidth + 10) + 'px,0)');   
+      }, 500);
+      }
+    }
+    if (many == '4') {
+      if(order == '1') {
+        answer2.css('opacity', '0').css('transform',' translate(25%,0)');
+        answer3.css('opacity', '0').css('transform',' translate(25%,0)');
+        answer4.css('opacity', '0').css('transform',' translateY(25%)');
+        setTimeout(() => {
+        answer1.css('transition', '.5s');
+     answer1.css('transform', 'translate(' + (answerWidth + 10) + 'px,0)');   
+        }, 500);
+      }
+     else if(order == '2') {
+      answer2.css('opacity', '0').css('transform',' translate(-25%,0)');
+      answer3.css('opacity', '0').css('transform',' translate(25%,0)');
+      answer4.css('opacity', '0').css('transform',' translateY(25%)');
+      setTimeout(() => {
+        answer1.css('transform', 'translateY(' + (answerHeight / 2) + 'px)'); 
+      answer1.css('transition', '.5s');
+      }, 500);
+      }
+     else if(order == '3') {
+      answer2.css('opacity', '0').css('transform',' translate(-25%,0)');
+      answer3.css('opacity', '0').css('transform',' translate(-25%,0)');
+      answer4.css('opacity', '0').css('transform',' translateY(25%)');
+      setTimeout(() => {
+      answer1.css('transition', '.5s');
+   answer1.css('transform', 'translate(-' + (answerWidth + 10) + 'px,0)');   
+      }, 500);
+      }
+     else if(order == '4') {
+      answer2.css('opacity', '0').css('transform','translate(-25%,0)');
+      answer3.css('opacity', '0').css('transform','translateY(-25%)');
+      answer4.css('opacity', '0').css('transform',' translate(25%,0)');
+      setTimeout(() => {
+      answer1.css('transition', '.5s');
+   answer1.css('transform', 'translateY(-' + (answerHeight / 2) + 'px)');   
+      }, 500);
+      }
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  else {
+    if (many == '3') {
+      if (order == '1') {
+        answer2.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer3.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer4.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer5.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer6.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer7.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer8.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer9.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer10.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer11.css('opacity', '0').css('transform',' translate(-400px,0)');
+        setTimeout(() => {
+        answer1.css('transition', '.4s');
+     answer1.css('transform', 'translate(' + (answerWidth + 10) + 'px,' +  (answerHeight + (answerHeight / 2))+ 'px');   
+        }, 500);
+      }
+      else if (order == '2') {
+        answer2.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer3.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer4.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer5.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer6.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer7.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer8.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer9.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer10.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer11.css('opacity', '0').css('transform',' translate(400px,0)');
+        setTimeout(() => {
+        answer1.css('transition', '.5s');
+        answer1.css('transform', 'translateY(' + (answerHeight + (answerHeight / 2)) + 'px)');
+        }, 500);
+      }
+     else if (order == '3') {
+      answer2.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer3.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer4.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer5.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer6.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer7.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer8.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer9.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer10.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer11.css('opacity', '0').css('transform',' translate(400px,0)');
+      setTimeout(() => {
+      answer1.css('transition', '.4s');
+   answer1.css('transform', 'translate(-' + (answerWidth + 10) + 'px,' +  (answerHeight + (answerHeight / 2))+ 'px');   
+      }, 500);
+      }
+    }
+    if (many == '2') {
+      if(order == '1') {
+        answer2.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer3.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer4.css('opacity', '0').css('transform',' translate(400px,0)');
+        setTimeout(() => {
+        answer1.css('transition', '.5s');
+     answer1.css('transform', 'translate(' + (answerWidth + 10 + (answerWidth / 2)) + 'px,0)');   
+        }, 500);
+      }
+     else if(order == '2') {
+      answer2.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer3.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer4.css('opacity', '0').css('transform',' translate(400px,0)');
+      setTimeout(() => {
+      answer1.css('transition', '.5s');
+   answer1.css('transform', 'translate(' + (10 + (answerWidth / 2)) + 'px,0)');   
+      }, 500);
+      }
+    }
+  }
+
+  setTimeout(() => {
+   answer1.css('transition', '0s');
+   answer1.css('z-index', '999');
+   back.css('visibility', 'visible')
+ }, 1000);
+  setTimeout(() => {
+    answer2.css('visibility', 'hidden').css('z-index', '1');
+    answer3.css('visibility', 'hidden').css('z-index', '1');
+    answer4.css('visibility', 'hidden').css('z-index', '1');
+    answer5.css('visibility', 'hidden').css('z-index', '1');
+    answer6.css('visibility', 'hidden').css('z-index', '1');
+    answer7.css('visibility', 'hidden').css('z-index', '1');
+    answer8.css('visibility', 'hidden').css('z-index', '1');
+    answer9.css('visibility', 'hidden').css('z-index', '1');
+    answer10.css('visibility', 'hidden').css('z-index', '1');
+    answer11.css('visibility', 'hidden').css('z-index', '1');
+ }, 999);
+ setTimeout(() => {
+   back.css('opacity','1');
+   answer1.css('transition', '1s');
+ }, 1100);
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* 
   answer1.css('opacity', '0');
   answer2.css('opacity', '0');
   answer3.css('opacity', '0');
@@ -870,9 +1066,6 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
   answer10.css('opacity', '0');
   answer11.css('opacity', '0');
   question.addClass('active').removeClass('click');
- 
-  
-
    
   setTimeout(() => {
     answer1.css('transition', '0s');
@@ -901,6 +1094,6 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
   }, 1000);
   setTimeout(() => {
     answer1.css('transition', '1s');
-  }, 1100);
-}
+  }, 1100);*/
+} 
 });
