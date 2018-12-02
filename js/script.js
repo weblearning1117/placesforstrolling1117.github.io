@@ -633,7 +633,6 @@ $('.section-1 .answer').on('click', function () {
   else {
     return false;
   }
- 
 });
 
 
@@ -759,7 +758,7 @@ function answer (answer1, answer2, answer3, answer4, question, answer, back) {
         answer4.css('opacity', '0').css('transform',' translateY(25%)');
         setTimeout(() => {
         answer1.css('transition', '.5s');
-     answer1.css('transform', 'translate(' + (answerWidth + 10) + 'px,0)');   
+     answer1.css('transform', 'translate(' + (answerWidth + 10) + 'px,' + (answerHeight / 2) + 'px)');   
         }, 500);
       }
      else if(order == '2') {
@@ -777,7 +776,7 @@ function answer (answer1, answer2, answer3, answer4, question, answer, back) {
       answer4.css('opacity', '0').css('transform',' translateY(25%)');
       setTimeout(() => {
       answer1.css('transition', '.5s');
-   answer1.css('transform', 'translate(-' + (answerWidth + 10) + 'px,0)');   
+   answer1.css('transform', 'translate(-' + (answerWidth + 10) + 'px,' + (answerHeight / 2) + 'px)');   
       }, 500);
       }
      else if(order == '4') {
