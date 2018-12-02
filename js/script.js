@@ -10,6 +10,9 @@ $(document).ready(function () {
   var question_4 = ' .question4 ';
   var question_5 = ' .question5 ';
   var question_6 = ' .question6 ';
+  var question_7 = ' .question7 ';
+  var question_8 = ' .question8 ';
+  var question_9 = ' .question9 ';
   
   var answers = ' .answer ';
   var answer_1 = '.answer1';
@@ -18,6 +21,11 @@ $(document).ready(function () {
   var answer_4 = '.answer4';
   var answer_5 = '.answer5';
   var answer_6 = '.answer6';
+  var answer_7 = '.answer7';
+  var answer_8 = '.answer8';
+  var answer_9 = '.answer9';
+  var answer_10 = '.answer10';
+  var answer_11 = '.answer11';
   
   var back = ' .back';
   var back_1 = ' .back1';
@@ -278,72 +286,72 @@ else {
 
 
   //6-й вопрос
-$('.question6 .answer1').on('click', function () {
+$(question_6 + answer_1).on('click', function () {
   if ($(question_6).hasClass('click')) {
-    answer2($(question_6 + answer_1), $(question_6 + answer_2), $(question_6 + answer_3), $(question_6 + answer_4),$(question_6 + answer_5),$(question_6 + answer_6),$('.question6 .answer7'),$('.question6 .answer8'),$('.question6 .answer9'),$('.question6 .answer10'),$('.question6 .answer11'), $('.question6'),$('.question6 .answer'), $(back_6));
+    answer2($(question_6 + answer_1), $(question_6 + answer_2), $(question_6 + answer_3), $(question_6 + answer_4),$(question_6 + answer_5),$(question_6 + answer_6),$(question_6 + answer_7),$(question_6 + answer_8),$(question_6 + answer_9),$(question_6 + answer_10),$(question_6 + answer_11), $(question_6),$(question_6 + answers), $(back_6));
   }
   else {
     return false;
   }
 
 })
-$('.question6 .answer2').on('click', function () {
+$(question_6 + answer_2).on('click', function () {
   if ($(question_6).hasClass('click')) {
-    answer2($('.question6 .answer2'), $('.question6 .answer1'), $('.question6 .answer3'), $('.question6 .answer4'),$('.question6 .answer5'),$('.question6 .answer6'),$('.question6 .answer7'),$('.question6 .answer8'),$('.question6 .answer9'),$('.question6 .answer10'),$('.question6 .answer11'), $('.question6'),$('.question6 .answer'), $(back_6));
+    answer2($(question_6 + answer_2), $(question_6 + answer_1), $(question_6 + answer_3), $(question_6 + answer_4),$(question_6 + answer_5),$(question_6 + answer_6),$(question_6 + answer_7),$(question_6 + answer_8),$(question_6 + answer_9),$(question_6 + answer_10),$(question_6 + answer_11), $(question_6),$(question_6 + answers), $(back_6));
   }
   else {
     return false;
   }
   
 })
-$('.question6 .answer3').on('click', function () {
+$(question_6 + answer_3).on('click', function () {
   if ($(question_6).hasClass('click')) {
-    answer2($('.question6 .answer3'), $('.question6 .answer1'), $('.question6 .answer2'), $('.question6 .answer4'),$('.question6 .answer5'),$('.question6 .answer6'),$('.question6 .answer7'),$('.question6 .answer8'),$('.question6 .answer9'),$('.question6 .answer10'),$('.question6 .answer11'), $('.question6'),$('.question6 .answer'), $(back_6));
+    answer2($(question_6 + answer_3), $(question_6 + answer_1), $(question_6 + answer_2), $(question_6 + answer_4),$(question_6 + answer_5),$(question_6 + answer_6),$(question_6 + answer_7),$(question_6 + answer_8),$(question_6 + answer_9),$(question_6 + answer_10),$(question_6 + answer_11), $(question_6),$(question_6 + answers), $(back_6));
   }
   else {
     return false;
   }
   
 })
-$('.question6 .answer4').on('click', function () {
-  if ($(question_6).hasClass('click')) {
-      answer2($('.question6 .answer4'), $('.question6 .answer1'), $('.question6 .answer2'), $('.question6 .answer3'),$('.question6 .answer5'),$('.question6 .answer6'),$('.question6 .answer7'),$('.question6 .answer8'),$('.question6 .answer9'),$('.question6 .answer10'),$('.question6 .answer11'), $('.question6'),$('.question6 .answer'), $(back_6));
+$(question_7 + answer_4).on('click', function () {
+  if ($(question_7).hasClass('click')) {
+      answer2($(question_7 + answer_4), $(question_7 + answer_1), $(question_7 + answer_2), $(question_7 + answer_3),$(question_7 + answer_5),$(question_7 + answer_6),$(question_7 + answer_7),$(question_7 + answer_8),$(question_7 + answer_9),$(question_7 + answer_10),$(question_7 + answer_11), $(question_7),$(question_7 + answers), $(back_6));
   }
   else {
     return false;
   }
 
 })
-$('.question6 .answer5').on('click', function () {
-  if ($(question_6).hasClass('click')) {
-      answer2($('.question6 .answer5'), $('.question6 .answer1'), $('.question6 .answer2'), $('.question6 .answer3'),$('.question6 .answer4'),$('.question6 .answer6'),$('.question6 .answer7'),$('.question6 .answer8'),$('.question6 .answer9'),$('.question6 .answer10'),$('.question6 .answer11'), $('.question6'),$('.question6 .answer'), $(back_7));
+$(question_7 + answer_5).on('click', function () {
+  if ($(question_7).hasClass('click')) {
+      answer2($(question_7 + answer_5), $(question_7 + answer_1), $(question_7 + answer_2), $(question_7 + answer_3),$(question_7 + answer_4),$(question_7 + answer_6),$(question_7 + answer_7),$(question_7 + answer_8),$(question_7 + answer_9),$(question_7 + answer_10),$(question_7 + answer_11), $(question_7),$(question_7 + answers), $(back_7));
   }
   else {
     return false;
   }
 
 })
-$('.question6 .answer6').on('click', function () {
-  if ($(question_6).hasClass('click')) {
-      answer2($('.question6 .answer6'), $('.question6 .answer1'), $('.question6 .answer2'), $('.question6 .answer3'),$('.question6 .answer4'),$('.question6 .answer5'),$('.question6 .answer7'),$('.question6 .answer8'),$('.question6 .answer9'),$('.question6 .answer10'),$('.question6 .answer11'), $('.question6'),$('.question6 .answer'), $(back_7));
+$(question_7 + answer_6).on('click', function () {
+  if ($(question_7).hasClass('click')) {
+      answer2($(question_7 + answer_6), $(question_7 + answer_1), $(question_7 + answer_2), $(question_7 + answer_3),$(question_7 + answer_4),$(question_7 + answer_5),$(question_7 + answer_7),$(question_7 + answer_8),$(question_7 + answer_9),$(question_7 + answer_10),$(question_7 + answer_11), $(question_7),$(question_7), $(back_7));
   }
   else {
     return false;
   }
 
 })
-$('.question6 .answer7').on('click', function () {
-  if ($(question_6).hasClass('click')) {
-      answer2($('.question6 .answer7'), $('.question6 .answer1'), $('.question6 .answer2'), $('.question6 .answer3'),$('.question6 .answer4'),$('.question6 .answer5'),$('.question6 .answer6'),$('.question6 .answer8'),$('.question6 .answer9'),$('.question6 .answer10'),$('.question6 .answer11'), $('.question6'),$('.question6 .answer'), $(back_7));
+$(question_8 + answer_7).on('click', function () {
+  if ($(question_8).hasClass('click')) {
+      answer2($(question_8 + answer_7), $(question_8 + answer_1), $(question_8 + answer_2), $(question_8 + answer_3),$(question_8 + answer_4),$(question_8 + answer_5),$(question_8 + answer_6),$(question_8 + answer_8),$(question_8 + answer_9),$(question_8 + answer_10),$(question_8 + answer_11), $(question_8),$(question_8 + answers), $(back_7));
   }
   else {
     return false;
   }
 
 })
-$('.question6 .answer8').on('click', function () {
-  if ($(question_6).hasClass('click')) {
-      answer2($('.question6 .answer8'), $('.question6 .answer1'), $('.question6 .answer2'), $('.question6 .answer3'),$('.question6 .answer4'),$('.question6 .answer5'),$('.question6 .answer6'),$('.question6 .answer7'),$('.question6 .answer9'),$('.question6 .answer10'),$('.question6 .answer11'), $('.question6'),$('.question6 .answer'), $(back_7));
+$(question_8 + answer_8).on('click', function () {
+  if ($(question_8).hasClass('click')) {
+      answer2($(question_8 + answer_8), $(question_8 + answer_1), $(question_8 + answer_2), $(question_8 + answer_3),$(question_8 + answer_4),$(question_8 + answer_5),$(question_8 + answer_6),$(question_8 + answer_7),$(question_8 + answer_9),$(question_8 + answer_10),$(question_8 + answer_11), $(question_8),$(question_8 + answers), $(back_7));
   }
   else {
     return false;
@@ -351,8 +359,8 @@ $('.question6 .answer8').on('click', function () {
 
 })
 $('.question6 .answer9').on('click', function () {
-  if ($(question_6).hasClass('click')) {
-      answer2($('.question6 .answer9'), $('.question6 .answer1'), $('.question6 .answer2'), $('.question6 .answer3'),$('.question6 .answer4'),$('.question6 .answer5'),$('.question6 .answer6'),$('.question6 .answer7'),$('.question6 .answer8'),$('.question6 .answer10'),$('.question6 .answer11'), $('.question6'),$('.question6 .answer'), $(back_8));
+  if ($(question_8).hasClass('click')) {
+      answer2($('.question6 .answer9'), $('.question6 .answer1'), $('.question6 .answer2'), $('.question6 .answer3'),$('.question6 .answer4'),$('.question6 .answer5'),$('.question6 .answer6'),$('.question6 .answer7'),$('.question6 .answer8'),$('.question6 .answer10'),$('.question6 .answer11'), $('.question6'),$('.question6 .answer'), $(back_7));
   }
   else {
     return false;
@@ -360,7 +368,7 @@ $('.question6 .answer9').on('click', function () {
 
 })
 $('.question6 .answer10').on('click', function () {
-  if ($(question_6).hasClass('click')) {
+  if ($(question_9).hasClass('click')) {
       answer2($('.question6 .answer10'), $('.question6 .answer1'), $('.question6 .answer2'), $('.question6 .answer3'),$('.question6 .answer4'),$('.question6 .answer5'),$('.question6 .answer6'),$('.question6 .answer7'),$('.question6 .answer8'),$('.question6 .answer9'),$('.question6 .answer11'), $('.question6'),$('.question6 .answer'), $(back_8));
   }
   else {
@@ -369,7 +377,7 @@ $('.question6 .answer10').on('click', function () {
 
 })
 $('.question6 .answer11').on('click', function () {
-  if ($(question_6).hasClass('click')) {
+  if ($(question_9).hasClass('click')) {
       answer2($('.question6 .answer11'), $('.question6 .answer1'), $('.question6 .answer2'), $('.question6 .answer3'),$('.question6 .answer4'),$('.question6 .answer5'),$('.question6 .answer6'),$('.question6 .answer7'),$('.question6 .answer8'),$('.question6 .answer9'),$('.question6 .answer10'), $('.question6'),$('.question6 .answer'), $(back_8));
   }
   else {
@@ -668,6 +676,7 @@ function answer (answer1, answer2, answer3, answer4, question, answer, back) {
  
    
   order = answer1.attr('data-order');
+  row = question.attr('data-row');
   many = question.attr('data-many');
   answer.css('transition', '1s');
   question.addClass('active');
@@ -856,6 +865,7 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
   
   order = answer1.attr('data-order');
   many = question.attr('data-many');
+  row = question.attr('data-row');
   answer.css('transition', '1s');
   question.addClass('active');
   question.removeClass('click');
@@ -935,7 +945,7 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
   
   
   else {
-    if (many == '3') {
+    if (many == '3' && row == '1') {
       if (order == '1') {
         answer2.css('opacity', '0').css('transform',' translate(400px,0)');
         answer3.css('opacity', '0').css('transform',' translate(400px,0)');
@@ -982,6 +992,56 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
       setTimeout(() => {
       answer1.css('transition', '.4s');
    answer1.css('transform', 'translate(-' + (answerWidth + 10) + 'px,' +  (answerHeight + (answerHeight / 2))+ 'px');   
+      }, 500);
+      }
+    }
+   else if (many == '3' && row == '2') {
+      if (order == '1') {
+        answer2.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer3.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer4.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer5.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer6.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer7.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer8.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer9.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer10.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer11.css('opacity', '0').css('transform',' translate(-400px,0)');
+        setTimeout(() => {
+        answer1.css('transition', '.4s');
+     answer1.css('transform', 'translate(' + (answerWidth + 10) + 'px,0');   
+        }, 500);
+      }
+      else if (order == '2') {
+        answer2.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer3.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer4.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer5.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer6.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer7.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer8.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer9.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer10.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer11.css('opacity', '0').css('transform',' translate(400px,0)');
+        setTimeout(() => {
+        answer1.css('transition', '.5s');
+      /*   answer1.css('transform', 'translateY(' + (answerHeight + (answerHeight / 2)) + 'px)'); */
+        }, 500);
+      }
+     else if (order == '3') {
+      answer2.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer3.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer4.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer5.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer6.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer7.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer8.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer9.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer10.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer11.css('opacity', '0').css('transform',' translate(400px,0)');
+      setTimeout(() => {
+      answer1.css('transition', '.4s');
+   answer1.css('transform', 'translate(-' + (answerWidth + 10) + 'px,0');   
       }, 500);
       }
     }
