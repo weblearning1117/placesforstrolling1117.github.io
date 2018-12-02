@@ -36,6 +36,7 @@ $(document).ready(function () {
   var back_6 = ' .back6';
   var back_7 = ' .back7';
   var back_8 = ' .back8';
+  var back_9 = ' .back9';
   
   var order, many;
   
@@ -288,7 +289,7 @@ else {
   //6-й вопрос
 $(question_6 + answer_1).on('click', function () {
   if ($(question_6).hasClass('click')) {
-    answer2($(question_6 + answer_1), $(question_6 + answer_2), $(question_6 + answer_3), $(question_6 + answer_4),$(question_6 + answer_5),$(question_6 + answer_6),$(question_6 + answer_7),$(question_6 + answer_8),$(question_6 + answer_9),$(question_6 + answer_10),$(question_6 + answer_11), $(question_6),$(question_6 + answers), $(back_6));
+    answer2($(question_6 + answer_1), $(question_6 + answer_2), $(question_6 + answer_3), $(question_7 + answer_4),$(question_7 + answer_5),$(question_7 + answer_6),$(question_8 + answer_7),$(question_8 + answer_8),$(question_8 + answer_9),$(question_9 + answer_10),$(question_9 + answer_11), $(question_6),$(question_6 + answers), $(back_6));
   }
   else {
     return false;
@@ -297,7 +298,7 @@ $(question_6 + answer_1).on('click', function () {
 })
 $(question_6 + answer_2).on('click', function () {
   if ($(question_6).hasClass('click')) {
-    answer2($(question_6 + answer_2), $(question_6 + answer_1), $(question_6 + answer_3), $(question_6 + answer_4),$(question_6 + answer_5),$(question_6 + answer_6),$(question_6 + answer_7),$(question_6 + answer_8),$(question_6 + answer_9),$(question_6 + answer_10),$(question_6 + answer_11), $(question_6),$(question_6 + answers), $(back_6));
+    answer2($(question_6 + answer_2), $(question_6 + answer_1), $(question_6 + answer_3), $(question_7 + answer_4),$(question_7 + answer_5),$(question_7 + answer_6),$(question_8 + answer_7),$(question_8 + answer_8),$(question_8 + answer_9),$(question_9 + answer_10),$(question_9 + answer_11), $(question_6),$(question_6 + answers), $(back_6));
   }
   else {
     return false;
@@ -306,7 +307,7 @@ $(question_6 + answer_2).on('click', function () {
 })
 $(question_6 + answer_3).on('click', function () {
   if ($(question_6).hasClass('click')) {
-    answer2($(question_6 + answer_3), $(question_6 + answer_1), $(question_6 + answer_2), $(question_6 + answer_4),$(question_6 + answer_5),$(question_6 + answer_6),$(question_6 + answer_7),$(question_6 + answer_8),$(question_6 + answer_9),$(question_6 + answer_10),$(question_6 + answer_11), $(question_6),$(question_6 + answers), $(back_6));
+    answer2($(question_6 + answer_3), $(question_6 + answer_1), $(question_6 + answer_2), $(question_7 + answer_4),$(question_7 + answer_5),$(question_7 + answer_6),$(question_8 + answer_7),$(question_8 + answer_8),$(question_8 + answer_9),$(question_9 + answer_10),$(question_9 + answer_11), $(question_6),$(question_6 + answers), $(back_6));
   }
   else {
     return false;
@@ -315,7 +316,7 @@ $(question_6 + answer_3).on('click', function () {
 })
 $(question_7 + answer_4).on('click', function () {
   if ($(question_7).hasClass('click')) {
-      answer2($(question_7 + answer_4), $(question_7 + answer_1), $(question_7 + answer_2), $(question_7 + answer_3),$(question_7 + answer_5),$(question_7 + answer_6),$(question_7 + answer_7),$(question_7 + answer_8),$(question_7 + answer_9),$(question_7 + answer_10),$(question_7 + answer_11), $(question_7),$(question_7 + answers), $(back_6));
+      answer2($(question_7 + answer_4), $(question_6 + answer_1), $(question_6 + answer_2), $(question_6 + answer_3),$(question_7 + answer_5),$(question_7 + answer_6),$(question_8 + answer_7),$(question_8 + answer_8),$(question_8 + answer_9),$(question_9 + answer_10),$(question_9 + answer_11), $(question_7),$(question_6 + answers), $(back_6));
   }
   else {
     return false;
@@ -324,7 +325,7 @@ $(question_7 + answer_4).on('click', function () {
 })
 $(question_7 + answer_5).on('click', function () {
   if ($(question_7).hasClass('click')) {
-      answer2($(question_7 + answer_5), $(question_7 + answer_1), $(question_7 + answer_2), $(question_7 + answer_3),$(question_7 + answer_4),$(question_7 + answer_6),$(question_7 + answer_7),$(question_7 + answer_8),$(question_7 + answer_9),$(question_7 + answer_10),$(question_7 + answer_11), $(question_7),$(question_7 + answers), $(back_7));
+      answer2($(question_7 + answer_5), $(question_6 + answer_1), $(question_6 + answer_2), $(question_6 + answer_3),$(question_7 + answer_4),$(question_7 + answer_6),$(question_8 + answer_7),$(question_8 + answer_8),$(question_8 + answer_9),$(question_9 + answer_10),$(question_9 + answer_11), $(question_7),$(question_6 + answers), $(back_7));
   }
   else {
     return false;
@@ -333,7 +334,7 @@ $(question_7 + answer_5).on('click', function () {
 })
 $(question_7 + answer_6).on('click', function () {
   if ($(question_7).hasClass('click')) {
-      answer2($(question_7 + answer_6), $(question_7 + answer_1), $(question_7 + answer_2), $(question_7 + answer_3),$(question_7 + answer_4),$(question_7 + answer_5),$(question_7 + answer_7),$(question_7 + answer_8),$(question_7 + answer_9),$(question_7 + answer_10),$(question_7 + answer_11), $(question_7),$(question_7), $(back_7));
+      answer2($(question_7 + answer_6), $(question_6 + answer_1), $(question_6 + answer_2), $(question_6 + answer_3),$(question_7 + answer_4),$(question_7 + answer_5),$(question_8 + answer_7),$(question_8 + answer_8),$(question_8 + answer_9),$(question_9 + answer_10),$(question_9 + answer_11), $(question_7),$(question_6 + answers), $(back_7));
   }
   else {
     return false;
@@ -342,7 +343,7 @@ $(question_7 + answer_6).on('click', function () {
 })
 $(question_8 + answer_7).on('click', function () {
   if ($(question_8).hasClass('click')) {
-      answer2($(question_8 + answer_7), $(question_8 + answer_1), $(question_8 + answer_2), $(question_8 + answer_3),$(question_8 + answer_4),$(question_8 + answer_5),$(question_8 + answer_6),$(question_8 + answer_8),$(question_8 + answer_9),$(question_8 + answer_10),$(question_8 + answer_11), $(question_8),$(question_8 + answers), $(back_7));
+      answer2($(question_8 + answer_7), $(question_6 + answer_1), $(question_6 + answer_2), $(question_6 + answer_3),$(question_7 + answer_4),$(question_7 + answer_5),$(question_7 + answer_6),$(question_8 + answer_8),$(question_8 + answer_9),$(question_9 + answer_10),$(question_9 + answer_11), $(question_8),$(question_6 + answers), $(back_7));
   }
   else {
     return false;
@@ -351,39 +352,35 @@ $(question_8 + answer_7).on('click', function () {
 })
 $(question_8 + answer_8).on('click', function () {
   if ($(question_8).hasClass('click')) {
-      answer2($(question_8 + answer_8), $(question_8 + answer_1), $(question_8 + answer_2), $(question_8 + answer_3),$(question_8 + answer_4),$(question_8 + answer_5),$(question_8 + answer_6),$(question_8 + answer_7),$(question_8 + answer_9),$(question_8 + answer_10),$(question_8 + answer_11), $(question_8),$(question_8 + answers), $(back_7));
+      answer2($(question_8 + answer_8), $(question_6 + answer_1), $(question_6 + answer_2), $(question_6 + answer_3),$(question_7 + answer_4),$(question_7 + answer_5),$(question_7 + answer_6),$(question_8 + answer_7),$(question_8 + answer_9),$(question_9 + answer_10),$(question_9 + answer_11), $(question_8),$(question_6 + answers), $(back_7));
   }
   else {
     return false;
   }
-
 })
-$('.question6 .answer9').on('click', function () {
+$(question_8 + answer_9).on('click', function () {
   if ($(question_8).hasClass('click')) {
-      answer2($('.question6 .answer9'), $('.question6 .answer1'), $('.question6 .answer2'), $('.question6 .answer3'),$('.question6 .answer4'),$('.question6 .answer5'),$('.question6 .answer6'),$('.question6 .answer7'),$('.question6 .answer8'),$('.question6 .answer10'),$('.question6 .answer11'), $('.question6'),$('.question6 .answer'), $(back_7));
+      answer2($(question_8 + answer_9), $(question_6 + answer_1), $(question_6 + answer_2), $(question_6 + answer_3),$(question_7 + answer_4),$(question_7 + answer_5),$(question_7 + answer_6),$(question_8 + answer_7),$(question_8 + answer_8),$(question_9 + answer_10),$(question_9 + answer_11), $(question_8),$(question_6 + answers), $(back_7));
   }
   else {
     return false;
   }
-
 })
-$('.question6 .answer10').on('click', function () {
+$(question_9 + answer_10).on('click', function () {
   if ($(question_9).hasClass('click')) {
-      answer2($('.question6 .answer10'), $('.question6 .answer1'), $('.question6 .answer2'), $('.question6 .answer3'),$('.question6 .answer4'),$('.question6 .answer5'),$('.question6 .answer6'),$('.question6 .answer7'),$('.question6 .answer8'),$('.question6 .answer9'),$('.question6 .answer11'), $('.question6'),$('.question6 .answer'), $(back_8));
+      answer2($(question_8 + answer_9), $(question_6 + answer_1), $(question_6 + answer_2), $(question_6 + answer_3),$(question_7 + answer_4),$(question_7 + answer_5),$(question_7 + answer_6),$(question_8 + answer_7),$(question_8 + answer_8),$(question_8 + answer_9),$(question_9 + answer_11), $(question_8),$(question_6 + answers), $(back_7));
   }
   else {
     return false;
   }
-
 })
-$('.question6 .answer11').on('click', function () {
+$(question_9 + answer_11).on('click', function () {
   if ($(question_9).hasClass('click')) {
-      answer2($('.question6 .answer11'), $('.question6 .answer1'), $('.question6 .answer2'), $('.question6 .answer3'),$('.question6 .answer4'),$('.question6 .answer5'),$('.question6 .answer6'),$('.question6 .answer7'),$('.question6 .answer8'),$('.question6 .answer9'),$('.question6 .answer10'), $('.question6'),$('.question6 .answer'), $(back_8));
+      answer2($(question_8 + answer_9), $(question_6 + answer_1), $(question_6 + answer_2), $(question_6 + answer_3),$(question_7 + answer_4),$(question_7 + answer_5),$(question_7 + answer_6),$(question_8 + answer_7),$(question_8 + answer_8),$(question_8 + answer_9),$(question_9 + answer_10), $(question_8),$(question_6 + answers), $(back_7));
   }
   else {
     return false;
   }
-
 })
 
 
@@ -536,6 +533,48 @@ $(back_6).on('click', function () {
     $(question_6).removeClass('active');
       $(back_6).css('opacity', '0');
       $(back_6).css('visibility', 'hidden');
+     $(question_6).removeClass('active');
+    $(question_6).addClass('click');
+  }
+  else {
+    return false;
+  }
+})
+$(back_7).on('click', function () {
+  if (!$(this).hasClass('off')) {
+
+    $(question_6 + answers).css('visibility', 'visible').css('opacity', '1').css('transform', 'translate(0,0)').removeClass('go-left').removeClass('go-right');    
+    $(question_6).removeClass('active');
+      $(back_7).css('opacity', '0');
+      $(back_7).css('visibility', 'hidden');
+     $(question_6).removeClass('active');
+    $(question_6).addClass('click');
+  }
+  else {
+    return false;
+  }
+})
+$(back_8).on('click', function () {
+  if (!$(this).hasClass('off')) {
+
+    $(question_6 + answers).css('visibility', 'visible').css('opacity', '1').css('transform', 'translate(0,0)').removeClass('go-left').removeClass('go-right');    
+    $(question_6).removeClass('active');
+      $(back_8).css('opacity', '0');
+      $(back_8).css('visibility', 'hidden');
+     $(question_6).removeClass('active');
+    $(question_6).addClass('click');
+  }
+  else {
+    return false;
+  }
+})
+$(back_9).on('click', function () {
+  if (!$(this).hasClass('off')) {
+
+    $(question_6 + answers).css('visibility', 'visible').css('opacity', '1').css('transform', 'translate(0,0)').removeClass('go-left').removeClass('go-right');    
+    $(question_6).removeClass('active');
+      $(back_9).css('opacity', '0');
+      $(back_9).css('visibility', 'hidden');
      $(question_6).removeClass('active');
     $(question_6).addClass('click');
   }
