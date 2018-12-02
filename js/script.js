@@ -50,9 +50,7 @@ $(document).ready(function () {
  var footerWidth = $('.footer').outerWidth();
  var answerHeightNoPad = $(answer_1).height();
  var answerWidth = $(answers).outerWidth();
-  $(answers).click(function () {
-     questionHeight = $(question_6).outerHeight();
-  })
+
   $(answers).css('height', answerHeightNoPad + 20);
   if (winWid < 992) {
      $('.next').css('top', headerHeight - 5 + 'px');
@@ -65,7 +63,7 @@ var campaign, amount, age, time;
 
 
 
-$(question_3 + answers).on('click', function () { 
+$(question_3 + answers).on('click', function () {
   if($(question_3).hasClass('off')) {
     $(question_2 + answers).addClass('off');
     setTimeout(() => {
@@ -80,12 +78,13 @@ $(question_3 + answers).on('click', function () {
  })
 
 $(answers).on('click', function () { 
+  questionHeight = $(question_6).outerHeight();
   $('.warning').css('bottom', footerHeight + 'px');
   $('.warning').css('left', (footerWidth / 2) - (warningWidth / 2) + 'px');
    $(back).addClass('off');
    setTimeout(() => {
     $(back).removeClass('off');
-   }, 1100);
+   }, 500);
 
    setTimeout(() => {
     $('.click').addClass('unclick');
@@ -703,7 +702,7 @@ $('.next').on('click', function () {
   
   })
   setTimeout(() => {
-    $('.warning').slideDown(300);
+    $('.warning').slideDown(500);
   }, 400);
  }
 });
