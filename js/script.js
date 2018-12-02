@@ -40,7 +40,7 @@ $(document).ready(function () {
   
   var order, many;
   
-  
+ var headerHeight = $('.center').outerHeight();
  var htmlHeight = $('html').outerHeight();
  var questionHeight = $(question_6).outerHeight();
  var answerHeight = $(answers).outerHeight();
@@ -54,6 +54,11 @@ $(document).ready(function () {
      questionHeight = $(question_6).outerHeight();
   })
   $(answers).css('height', answerHeightNoPad + 20);
+  if (winWid < 992) {
+     $('.next').css('top', headerHeight - 5 + 'px');
+  $('.main-back').css('top', headerHeight - 5 + 'px');
+  }
+ 
   //переменные для алгоритма
 var campaign, amount, age, time;
   
@@ -368,7 +373,7 @@ $(question_8 + answer_9).on('click', function () {
 })
 $(question_9 + answer_10).on('click', function () {
   if ($(question_9).hasClass('click')) {
-      answer2($(question_8 + answer_9), $(question_6 + answer_1), $(question_6 + answer_2), $(question_6 + answer_3),$(question_7 + answer_4),$(question_7 + answer_5),$(question_7 + answer_6),$(question_8 + answer_7),$(question_8 + answer_8),$(question_8 + answer_9),$(question_9 + answer_11), $(question_8),$(question_6 + answers), $(back_7));
+      answer2($(question_9 + answer_10), $(question_6 + answer_1), $(question_6 + answer_2), $(question_6 + answer_3),$(question_7 + answer_4),$(question_7 + answer_5),$(question_7 + answer_6),$(question_8 + answer_7),$(question_8 + answer_8),$(question_8 + answer_9),$(question_9 + answer_11), $(question_8),$(question_6 + answers), $(back_7));
   }
   else {
     return false;
@@ -376,7 +381,7 @@ $(question_9 + answer_10).on('click', function () {
 })
 $(question_9 + answer_11).on('click', function () {
   if ($(question_9).hasClass('click')) {
-      answer2($(question_8 + answer_9), $(question_6 + answer_1), $(question_6 + answer_2), $(question_6 + answer_3),$(question_7 + answer_4),$(question_7 + answer_5),$(question_7 + answer_6),$(question_8 + answer_7),$(question_8 + answer_8),$(question_8 + answer_9),$(question_9 + answer_10), $(question_8),$(question_6 + answers), $(back_7));
+      answer2($(question_9 + answer_11), $(question_6 + answer_1), $(question_6 + answer_2), $(question_6 + answer_3),$(question_7 + answer_4),$(question_7 + answer_5),$(question_7 + answer_6),$(question_8 + answer_7),$(question_8 + answer_8),$(question_8 + answer_9),$(question_9 + answer_10), $(question_8),$(question_6 + answers), $(back_7));
   }
   else {
     return false;
@@ -1084,24 +1089,88 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
       }, 500);
       }
     }
-    if (many == '2') {
-      if(order == '1') {
+   else if (many == '3' && row == '3') {
+      if (order == '1') {
         answer2.css('opacity', '0').css('transform',' translate(400px,0)');
         answer3.css('opacity', '0').css('transform',' translate(400px,0)');
-        answer4.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer4.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer5.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer6.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer7.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer8.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer9.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer10.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer11.css('opacity', '0').css('transform',' translate(-400px,0)');
+        setTimeout(() => {
+        answer1.css('transition', '.4s');
+     answer1.css('transform', 'translate(' + (answerWidth + 10) + 'px,-' +  (answerHeight + (answerHeight / 2))+ 'px');   
+        }, 500);
+      }
+      else if (order == '2') {
+        answer2.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer3.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer4.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer5.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer6.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer7.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer8.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer9.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer10.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer11.css('opacity', '0').css('transform',' translate(400px,0)');
         setTimeout(() => {
         answer1.css('transition', '.5s');
-     answer1.css('transform', 'translate(' + (answerWidth + 10 + (answerWidth / 2)) + 'px,0)');   
+        answer1.css('transform', 'translateY(-' + (answerHeight + (answerHeight / 2)) + 'px)');
+        }, 500);
+      }
+     else if (order == '3') {
+      answer2.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer3.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer4.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer5.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer6.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer7.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer8.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer9.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer10.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer11.css('opacity', '0').css('transform',' translate(400px,0)');
+      setTimeout(() => {
+      answer1.css('transition', '.4s');
+   answer1.css('transform', 'translate(-' + (answerWidth + 10) + 'px,-' +  (answerHeight + (answerHeight / 2))+ 'px');   
+      }, 500);
+      }
+    }
+   else if (many == '2' && row == '4') {
+      if(order == '1') {
+        answer2.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer3.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer4.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer5.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer6.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer7.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer8.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer9.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer10.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer11.css('opacity', '0').css('transform',' translate(400px,0)');
+      setTimeout(() => {
+        answer1.css('transition', '.4s');
+     answer1.css('transform', 'translate(' + (answerWidth *  100) + 'px,-' +  (answerHeight * 100)+ 'px'); 
         }, 500);
       }
      else if(order == '2') {
       answer2.css('opacity', '0').css('transform',' translate(-400px,0)');
-      answer3.css('opacity', '0').css('transform',' translate(400px,0)');
-      answer4.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer3.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer4.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer5.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer6.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer7.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer8.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer9.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer10.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer11.css('opacity', '0').css('transform',' translate(-400px,0)');
       setTimeout(() => {
-      answer1.css('transition', '.5s');
-   answer1.css('transform', 'translate(' + (10 + (answerWidth / 2)) + 'px,0)');   
-      }, 500);
+        answer1.css('transition', '.4s');
+     answer1.css('transform', 'translate(-' + (answerWidth / 2) + 'px,' +  (answerHeight + answerHeight)+ 'px'); 
+        }, 500);
       }
     }
   }
