@@ -60,10 +60,7 @@ $(document).ready(function () {
   //переменные для алгоритма
 var campaign, amount, age, time;
   
-
-
-
-$(question_3 + answers).on('click', function () {
+/* $(question_3 + answers).on('click', function () {
   if($(question_3).hasClass('off')) {
     $(question_2 + answers).addClass('off');
     setTimeout(() => {
@@ -75,25 +72,24 @@ $(question_3 + answers).on('click', function () {
     return false;
   } 
  
- })
+ }) */
 
-$(answers).on('click', function () { 
+$(answers).on('click', function () {
   questionHeight = $(question_6).outerHeight();
   $('.warning').css('bottom', footerHeight + 'px');
-  $('.warning').css('left', (footerWidth / 2) - (warningWidth / 2) + 'px');
-   $(back).addClass('off');
+  $('.warning').css('left', ((footerWidth / 2) - (warningWidth / 2)) + 'px');
+   /* $(back).addClass('off');
    setTimeout(() => {
     $(back).removeClass('off');
-   }, 500);
-
+   }, 500); */
+ })
+$(question_3 + answers).on('click', function () {
+    $('.question2.click').addClass('unclick');
+    $('.question2.unclick').removeClass('click');
    setTimeout(() => {
-    $('.click').addClass('unclick');
-    $('.click').removeClass('click');
-   }, 10);
-   setTimeout(() => {
-    $('.unclick').addClass('click');
-    $('.unclick').removeClass('unclick');
-   }, 1000);
+    $('.question2.unclick').addClass('click');
+    $('.question2.click').removeClass('unclick');
+   }, 1000); 
  })
 
   //1-й вопрос
@@ -1194,11 +1190,6 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
    back.css('opacity','1');
    answer1.css('transition', '1s');
  }, 1100);
-  
-  
-  
-  
-  
   
   
   
