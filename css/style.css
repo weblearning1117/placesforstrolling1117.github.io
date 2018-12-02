@@ -275,7 +275,6 @@ z-index: 1;
     display: none;
     font-size: 20px;
     color: rgb(75, 92, 243);
-    transition: 1s;
     position: absolute;
     font-weight: 800;
     z-index: 1;
@@ -283,11 +282,6 @@ z-index: 1;
     background: #fff;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
-    
-    
-/*     border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    padding: 5px 10px; */
 }
 .warning:hover {
     cursor: default;
