@@ -6,14 +6,6 @@ body {
     overflow-x: hidden;
     position: relative;
 }
-.midnightHeader.blue {
-    background: none;
-    color: blue;
-  }
-  .midnightHeader.default {
-    background: none;
-    color: black;
-  }
   .fixed {
       height: 20px;
   }
@@ -123,7 +115,7 @@ li {
     border-radius: 48%;
     margin-left: 10px;
     transition: 1s;
-    z-index: 999;
+    z-index: 99;
 }
 .answer:hover {
 cursor: pointer;
@@ -188,7 +180,7 @@ animation: sectionBack-2 alternate forwards .5s;
     top: 13%;
     left: -5.4%;
     font-size: 30px;
-    color: rgb(24, 39, 180);
+    color: rgb(75, 92, 243);
     background: white;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
@@ -243,7 +235,7 @@ animation: sectionBack-2 alternate forwards .5s;
     position: absolute;
     right: 20%;
     top: 40%;
-    z-index: 1;
+    z-index: 999;
 }
 .back1 {
     top: 20%;
