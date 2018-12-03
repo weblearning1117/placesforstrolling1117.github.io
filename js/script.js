@@ -614,10 +614,13 @@ $('.section-1 .answer').on('click', function () {
   $('.back').addClass('off');
   
     setTimeout(() => {
-      $('html, body').animate({
+      if ($('.next').hasClass('first')) {
+         $('html, body').animate({
         scrollTop: -htmlHeight
       }, 600);
-    }, 500)
+      $('.first').removeClass('first');
+      }
+    }, 700)
     setTimeout(() => {
       $('.section-1').addClass('animation-1');
       $('.section-2').addClass('animation-2');
