@@ -620,7 +620,7 @@ $('.section-1 .answer').on('click', function () {
       }, 600);
       $('.first').removeClass('first');
       }
-    }, 700)
+    }, 500)
     setTimeout(() => {
       $('.section-1').addClass('animation-1');
       $('.section-2').addClass('animation-2');
