@@ -612,9 +612,12 @@ $('.section-1 .answer').on('click', function () {
     $('.section-1').removeClass('animationBack-2');
     $('.section-2').removeClass('animationBack-1');
   $('.back').addClass('off');
-  $('html, body').animate({
-    scrollTop: -htmlHeight
-  }, 600);
+  
+    setTimeout(() => {
+      $('html, body').animate({
+        scrollTop: -htmlHeight
+      }, 600);
+    }, 500)
     setTimeout(() => {
       $('.section-1').addClass('animation-1');
       $('.section-2').addClass('animation-2');
@@ -673,9 +676,6 @@ $('.next').on('click', function () {
  
   if ($('.question1').hasClass('active') && $('.question2').hasClass('active') && $('.question3').hasClass('active') && $('.question4').hasClass('active')) {
   $('.next').addClass('active');
-  $('html, body').animate({
-    scrollTop: -htmlHeight
-  }, 600);
   }
   if ($('.question1').hasClass('active') && $('.question2').hasClass('active') && $('.question3').hasClass('active') && $('.question4').hasClass('active') && $('.next').hasClass('active')) {
     
