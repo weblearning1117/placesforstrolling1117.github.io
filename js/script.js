@@ -617,10 +617,10 @@ $('.section-1 .answer').on('click', function () {
       if ($('.next').hasClass('first')) {
          $('html, body').animate({
         scrollTop: -htmlHeight
-      }, 600);
+      }, 700);
       $('.first').removeClass('first');
       }
-    }, 500)
+    }, 600)
     setTimeout(() => {
       $('.section-1').addClass('animation-1');
       $('.section-2').addClass('animation-2');
