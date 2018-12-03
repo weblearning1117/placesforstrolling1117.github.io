@@ -75,7 +75,14 @@ var campaign, amount, age, time;
   } 
  
  }) */
-
+ $(document).on('contextmenu', function (e) {
+   e.preventDefault();
+ });
+ $(document).keypress(function(e){
+      if(e.keyCode==18 || e.keyCode==38){
+       alert(1);
+      }
+    });
 $(answers).on('click', function () {
   questionHeight = $(question_6).outerHeight();
   $('.warning').css('bottom', footerHeight + 'px');
