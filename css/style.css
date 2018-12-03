@@ -234,11 +234,14 @@ animation: sectionBack-2 alternate forwards .5s;
     visibility: hidden;
     position: absolute;
     right: 20%;
-    top: 40%;
+    top: 30%;
     z-index: 999;
 }
 .back1 {
     top: 20%;
+}
+.back6 {
+    top: 135%;
 }
 .back:hover {
     cursor: pointer;
