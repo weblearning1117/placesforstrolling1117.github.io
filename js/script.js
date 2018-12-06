@@ -197,6 +197,44 @@ else {
  return false;
 }
 })
+  $(question_2 + answer_4).on('click', function () {
+   var check = $(answers).hasClass('off');
+    if (!check) {
+      if ($(question_2).hasClass('click')) {
+    campaign =  $(question_2 + answer_4).attr('data-campaign');
+     answer($(question_2 + answer_4), $(question_2 + answer_1), $(question_2 + answer_2), $(question_2 + answer_3),  $(question_2), $(question_2 + answers), $(back_2));
+    }
+  else {
+    return false;
+  }
+  if (amount != '1-5') {
+    amount = $(question_3 + answer_1).attr('data-amount');
+    $(question_3 + answers).css('visibility', 'visible').css('opacity', '1').css('transform', 'translate(0,0)').removeClass('go-left').removeClass('go-right');    
+    $(question_3).removeClass('active');
+      $(back_3).css('opacity', '0');
+      $(back_3).css('visibility', 'hidden');
+     $(question_3).removeClass('active');
+    $(question_3).addClass('click');
+    answer ($(question_3 + answer_1), $(question_3 + answer_2), $(question_3 + answer_3), $(question_3 + answer_4),$(question_3), $(question_3 + answers), $(back_3));
+  }
+ else {
+   return false;
+ }
+ if ($(question_3).hasClass('click')) {
+  amount = $(question_3 + answer_1).attr('data-amount');
+    answer($(question_3 + answer_1), $(question_3 + answer_2), $(question_3 + answer_3), $(question_3 + answer_4), $(question_3), $(question_3 + answers), $(back_3));
+  }
+  else {
+    return false;
+  }
+  setTimeout(() => {
+    amount = $(question_3 + answer_1).attr('data-amount');
+  }, 1000);
+}
+else {
+ return false;
+}
+})
 
 
 
@@ -431,6 +469,22 @@ $(back_3).on('click', function () {
   if (!$(this).hasClass('off')) {
     amount = '';
     if (campaign == 'single') {
+      $(question_3 + answers).css('visibility', 'visible').css('opacity', '1').css('transform', 'translate(0,0)').removeClass('go-left').removeClass('go-right');    
+    $(question_3).removeClass('active');
+      $(back_3).css('opacity', '0');
+      $(back_3).css('visibility', 'hidden');
+     $(question_3).removeClass('active');
+    $(question_3).addClass('click');
+    
+    campaign = '';
+    $(question_2 + answers).css('visibility', 'visible').css('opacity', '1').css('transform', 'translate(0,0)').removeClass('go-left').removeClass('go-right');    
+  $(question_2).removeClass('active');
+    $(back_2).css('opacity', '0');
+    $(back_2).css('visibility', 'hidden');
+   $(question_2).removeClass('active');
+  $(question_2).addClass('click');
+    }
+   else if (campaign == 'pare') {
       $(question_3 + answers).css('visibility', 'visible').css('opacity', '1').css('transform', 'translate(0,0)').removeClass('go-left').removeClass('go-right');    
     $(question_3).removeClass('active');
       $(back_3).css('opacity', '0');
