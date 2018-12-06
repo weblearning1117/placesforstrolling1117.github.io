@@ -1,5 +1,3 @@
-//работай на всех устройствах
-
 $(document).ready(function () {   
   var winWid = window.innerWidth;
  
@@ -1007,7 +1005,7 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
       answer11.css('opacity', '0').css('transform',' translate(25%,0)');
       setTimeout(() => {
         answer1.css('transition', '.4s');
-     answer1.css('transform', 'translate(' + (answerWidth / 2) + 'px,-' +  (answerHeight + answerHeight)+ 'px'); 
+     answer1.css('transform', 'translate(' + (answerWidth / 2) + 'px,-' + 70 + (answerHeight * 2)+ 'px'); 
         }, 500);
       }
      else if(order == '2') {
@@ -1023,7 +1021,7 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
       answer11.css('opacity', '0').css('transform',' translate(-25%,0)');
       setTimeout(() => {
         answer1.css('transition', '.4s');
-     answer1.css('transform', 'translate(-' + (answerWidth / 2) + 'px,-' +  (answerHeight + answerHeight)+ 'px'); 
+     answer1.css('transform', 'translate(-' + (answerWidth / 2) + 'px,-' + 70 + (answerHeight * 2) + 'px'); 
         }, 500);
       }
     }
@@ -1202,7 +1200,7 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
       answer11.css('opacity', '0').css('transform',' translate(400px,0)');
       setTimeout(() => {
         answer1.css('transition', '.4s');
-     answer1.css('transform', 'translate(' + (answerWidth / 2) + 'px,-' +  (35 + (answerHeight * 2)) + 'px'); 
+     answer1.css('transform', 'translate(' + (answerWidth / 2) + 'px,-' +  (70 + (answerHeight * 2)) + 'px'); 
         }, 500);
       }
      else if(order == '2') {
@@ -1218,7 +1216,7 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
       answer11.css('opacity', '0').css('transform',' translate(-400px,0)');
       setTimeout(() => {
         answer1.css('transition', '.4s');
-     answer1.css('transform', 'translate(-' + (answerWidth / 2) + 'px,-' +  (35 + (answerHeight * 2)) + 'px'); 
+     answer1.css('transform', 'translate(-' + (answerWidth / 2) + 'px,-' +  (70 + (answerHeight * 2)) + 'px'); 
         }, 500);
       }
     }
