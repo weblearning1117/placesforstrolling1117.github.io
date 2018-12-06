@@ -343,7 +343,7 @@ $(question_7 + answer_5).on('click', function () {
 })
 $(question_7 + answer_6).on('click', function () {
   if ($(question_7).hasClass('click')) {
-      answer2($(question_7 + answer_6), $(question_6 + answer_1), $(question_6 + answer_2), $(question_6 + answer_3),$(question_7 + answer_4),$(question_7 + answer_5),$(question_8 + answer_7),$(question_8 + answer_8),$(question_8 + answer_9),$(question_9 + answer_10),$(question_9 + answer_11), $(question_7),$(question_6 + answers), $(back_6));
+    answer2($(question_7 + answer_6), $(question_6 + answer_1), $(question_6 + answer_2), $(question_6 + answer_3),$(question_7 + answer_4),$(question_7 + answer_5),$(question_8 + answer_7),$(question_8 + answer_8),$(question_8 + answer_9),$(question_9 + answer_10),$(question_9 + answer_11), $(question_7),$(question_6 + answers), $(back_6));
   }
   else {
     return false;
@@ -496,6 +496,9 @@ $(back_6).on('click', function () {
       $(back_6).css('display', 'block');
      $(question_6).removeClass('active');
     $(question_6).addClass('click');
+    $(question_7).addClass('click');
+    $(question_8).addClass('click');
+    $(question_9).addClass('click');
   }
   else {
     return false;
@@ -834,7 +837,10 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
   row = question.attr('data-row');
   answer.css('transition', '1s');
   question.addClass('active');
-  question.removeClass('click');
+  $(question_6).removeClass('click');
+  $(question_7).removeClass('click');
+  $(question_8).removeClass('click');
+  $(question_9).removeClass('click');
   if (winWid < 992) {
     if (many == '3' && row == '1') {
       if (order == '1') {
@@ -887,12 +893,13 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
       }
     }
    else if (many == '3' && row == '2') {
+     answer1.css('visibility', 'visible');
       if (order == '1') {
         answer2.css('opacity', '0').css('transform',' translate(25%,0)');
         answer3.css('opacity', '0').css('transform',' translate(25%,0)');
-        answer4.css('opacity', '0').css('transform',' translate(-25%,0)');
-        answer5.css('opacity', '0').css('transform',' translate(-25%,0)');
-        answer6.css('opacity', '0').css('transform',' translate(-25%,0)');
+        answer4.css('opacity', '0').css('transform',' translate(25%,0)');
+        answer5.css('opacity', '0').css('transform',' translate(25%,0)');
+        answer6.css('opacity', '0').css('transform',' translate(25%,0)');
         answer7.css('opacity', '0').css('transform',' translate(25%,0)');
         answer8.css('opacity', '0').css('transform',' translate(25%,0)');
         answer9.css('opacity', '0').css('transform',' translate(25%,0)');
@@ -905,9 +912,9 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
       }
       else if (order == '2') {
         answer2.css('opacity', '0').css('transform',' translate(-25%,0)');
-        answer3.css('opacity', '0').css('transform',' translate(25%,0)');
-        answer4.css('opacity', '0').css('transform',' translate(-25%,0)');
-        answer5.css('opacity', '0').css('transform',' translate(25%,0)');
+        answer3.css('opacity', '0').css('transform',' translate(-25%,0)');
+        answer4.css('opacity', '0').css('transform',' translate(25%,0)');
+        answer5.css('opacity', '0').css('transform',' translate(-25%,0)');
         answer6.css('opacity', '0').css('transform',' translate(25%,0)');
         answer7.css('opacity', '0').css('transform',' translate(-25%,0)');
         answer8.css('opacity', '0').css('transform',' translate(25%,0)');
@@ -922,9 +929,9 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
      else if (order == '3') {
       answer2.css('opacity', '0').css('transform',' translate(-25%,0)');
       answer3.css('opacity', '0').css('transform',' translate(-25%,0)');
-      answer4.css('opacity', '0').css('transform',' translate(25%,0)');
-      answer5.css('opacity', '0').css('transform',' translate(25%,0)');
-      answer6.css('opacity', '0').css('transform',' translate(25%,0)');
+      answer4.css('opacity', '0').css('transform',' translate(-25%,0)');
+      answer5.css('opacity', '0').css('transform',' translate(-25%,0)');
+      answer6.css('opacity', '0').css('transform',' translate(-25%,0)');
       answer7.css('opacity', '0').css('transform',' translate(-25%,0)');
       answer8.css('opacity', '0').css('transform',' translate(-25%,0)');
       answer9.css('opacity', '0').css('transform',' translate(-25%,0)');
@@ -940,7 +947,7 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
       if (order == '1') {
         answer2.css('opacity', '0').css('transform',' translate(25%,0)');
         answer3.css('opacity', '0').css('transform',' translate(25%,0)');
-        answer4.css('opacity', '0').css('transform',' translate(-25%,0)');
+        answer4.css('opacity', '0').css('transform',' translate(25%,0)');
         answer5.css('opacity', '0').css('transform',' translate(-25%,0)');
         answer6.css('opacity', '0').css('transform',' translate(-25%,0)');
         answer7.css('opacity', '0').css('transform',' translate(25%,0)');
@@ -955,12 +962,12 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
       }
       else if (order == '2') {
         answer2.css('opacity', '0').css('transform',' translate(-25%,0)');
-        answer3.css('opacity', '0').css('transform',' translate(25%,0)');
-        answer4.css('opacity', '0').css('transform',' translate(-25%,0)');
-        answer5.css('opacity', '0').css('transform',' translate(25%,0)');
+        answer3.css('opacity', '0').css('transform',' translate(-25%,0)');
+        answer4.css('opacity', '0').css('transform',' translate(25%,0)');
+        answer5.css('opacity', '0').css('transform',' translate(-25%,0)');
         answer6.css('opacity', '0').css('transform',' translate(25%,0)');
-        answer7.css('opacity', '0').css('transform',' translate(-25%,0)');
-        answer8.css('opacity', '0').css('transform',' translate(25%,0)');
+        answer7.css('opacity', '0').css('transform',' translate(25%,0)');
+        answer8.css('opacity', '0').css('transform',' translate(-25%,0)');
         answer9.css('opacity', '0').css('transform',' translate(25%,0)');
         answer10.css('opacity', '0').css('transform',' translate(-25%,0)');
         answer11.css('opacity', '0').css('transform',' translate(25%,0)');
@@ -972,10 +979,10 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
      else if (order == '3') {
       answer2.css('opacity', '0').css('transform',' translate(-25%,0)');
       answer3.css('opacity', '0').css('transform',' translate(-25%,0)');
-      answer4.css('opacity', '0').css('transform',' translate(25%,0)');
-      answer5.css('opacity', '0').css('transform',' translate(25%,0)');
+      answer4.css('opacity', '0').css('transform',' translate(-25%,0)');
+      answer5.css('opacity', '0').css('transform',' translate(-25%,0)');
       answer6.css('opacity', '0').css('transform',' translate(25%,0)');
-      answer7.css('opacity', '0').css('transform',' translate(-25%,0)');
+      answer7.css('opacity', '0').css('transform',' translate(25%,0)');
       answer8.css('opacity', '0').css('transform',' translate(-25%,0)');
       answer9.css('opacity', '0').css('transform',' translate(-25%,0)');
       answer10.css('opacity', '0').css('transform',' translate(25%,0)');
@@ -1045,7 +1052,7 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
         answer11.css('opacity', '0').css('transform',' translate(-400px,0)');
         setTimeout(() => {
         answer1.css('transition', '.4s');
-     answer1.css('transform', 'translate(' + (answerWidth + 10) + 'px,' +  (answerHeight + (answerHeight / 2))+ 'px');   
+     answer1.css('transform', 'translate(' + (answerWidth + 10) + 'px,' + (35 + answerHeight) + 'px');   
         }, 500);
       }
       else if (order == '2') {
@@ -1061,7 +1068,7 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
         answer11.css('opacity', '0').css('transform',' translate(400px,0)');
         setTimeout(() => {
         answer1.css('transition', '.5s');
-        answer1.css('transform', 'translateY(' + (answerHeight + (answerHeight / 2)) + 'px)');
+        answer1.css('transform', 'translateY(' + (35 + answerHeight) + 'px)');
         }, 500);
       }
      else if (order == '3') {
@@ -1077,17 +1084,18 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
       answer11.css('opacity', '0').css('transform',' translate(400px,0)');
       setTimeout(() => {
       answer1.css('transition', '.4s');
-   answer1.css('transform', 'translate(-' + (answerWidth + 10) + 'px,' +  (answerHeight + (answerHeight / 2))+ 'px');   
+   answer1.css('transform', 'translate(-' + (answerWidth + 10) + 'px,' +  (35 + answerHeight)+ 'px');   
       }, 500);
       }
     }
    else if (many == '3' && row == '2') {
+     answer1.css('visibility', 'visible');
       if (order == '1') {
         answer2.css('opacity', '0').css('transform',' translate(400px,0)');
         answer3.css('opacity', '0').css('transform',' translate(400px,0)');
-        answer4.css('opacity', '0').css('transform',' translate(-400px,0)');
-        answer5.css('opacity', '0').css('transform',' translate(-400px,0)');
-        answer6.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer4.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer5.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer6.css('opacity', '0').css('transform',' translate(400px,0)');
         answer7.css('opacity', '0').css('transform',' translate(400px,0)');
         answer8.css('opacity', '0').css('transform',' translate(400px,0)');
         answer9.css('opacity', '0').css('transform',' translate(400px,0)');
@@ -1100,9 +1108,9 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
       }
       else if (order == '2') {
         answer2.css('opacity', '0').css('transform',' translate(-400px,0)');
-        answer3.css('opacity', '0').css('transform',' translate(400px,0)');
-        answer4.css('opacity', '0').css('transform',' translate(-400px,0)');
-        answer5.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer3.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer4.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer5.css('opacity', '0').css('transform',' translate(-400px,0)');
         answer6.css('opacity', '0').css('transform',' translate(400px,0)');
         answer7.css('opacity', '0').css('transform',' translate(-400px,0)');
         answer8.css('opacity', '0').css('transform',' translate(400px,0)');
@@ -1111,15 +1119,14 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
         answer11.css('opacity', '0').css('transform',' translate(400px,0)');
         setTimeout(() => {
         answer1.css('transition', '.5s');
-      /*   answer1.css('transform', 'translateY(' + (answerHeight + (answerHeight / 2)) + 'px)'); */
         }, 500);
       }
      else if (order == '3') {
       answer2.css('opacity', '0').css('transform',' translate(-400px,0)');
       answer3.css('opacity', '0').css('transform',' translate(-400px,0)');
-      answer4.css('opacity', '0').css('transform',' translate(400px,0)');
-      answer5.css('opacity', '0').css('transform',' translate(400px,0)');
-      answer6.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer4.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer5.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer6.css('opacity', '0').css('transform',' translate(-400px,0)');
       answer7.css('opacity', '0').css('transform',' translate(-400px,0)');
       answer8.css('opacity', '0').css('transform',' translate(-400px,0)');
       answer9.css('opacity', '0').css('transform',' translate(-400px,0)');
@@ -1135,7 +1142,7 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
       if (order == '1') {
         answer2.css('opacity', '0').css('transform',' translate(400px,0)');
         answer3.css('opacity', '0').css('transform',' translate(400px,0)');
-        answer4.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer4.css('opacity', '0').css('transform',' translate(400px,0)');
         answer5.css('opacity', '0').css('transform',' translate(-400px,0)');
         answer6.css('opacity', '0').css('transform',' translate(-400px,0)');
         answer7.css('opacity', '0').css('transform',' translate(400px,0)');
@@ -1145,39 +1152,39 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
         answer11.css('opacity', '0').css('transform',' translate(-400px,0)');
         setTimeout(() => {
         answer1.css('transition', '.4s');
-     answer1.css('transform', 'translate(' + (answerWidth + 10) + 'px,-' +  (answerHeight + (answerHeight / 2))+ 'px');   
+     answer1.css('transform', 'translate(' + (answerWidth + 10) + 'px,-' +  (35 + answerHeight) + 'px');   
         }, 500);
       }
       else if (order == '2') {
         answer2.css('opacity', '0').css('transform',' translate(-400px,0)');
-        answer3.css('opacity', '0').css('transform',' translate(400px,0)');
-        answer4.css('opacity', '0').css('transform',' translate(-400px,0)');
-        answer5.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer3.css('opacity', '0').css('transform',' translate(-400px,0)');
+        answer4.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer5.css('opacity', '0').css('transform',' translate(-400px,0)');
         answer6.css('opacity', '0').css('transform',' translate(400px,0)');
-        answer7.css('opacity', '0').css('transform',' translate(-400px,0)');
-        answer8.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer7.css('opacity', '0').css('transform',' translate(400px,0)');
+        answer8.css('opacity', '0').css('transform',' translate(-400px,0)');
         answer9.css('opacity', '0').css('transform',' translate(400px,0)');
         answer10.css('opacity', '0').css('transform',' translate(-400px,0)');
         answer11.css('opacity', '0').css('transform',' translate(400px,0)');
         setTimeout(() => {
         answer1.css('transition', '.5s');
-        answer1.css('transform', 'translateY(-' + (answerHeight + (answerHeight / 2)) + 'px)');
+        answer1.css('transform', 'translateY(-' + (35 + answerHeight) + 'px)');
         }, 500);
       }
      else if (order == '3') {
       answer2.css('opacity', '0').css('transform',' translate(-400px,0)');
       answer3.css('opacity', '0').css('transform',' translate(-400px,0)');
-      answer4.css('opacity', '0').css('transform',' translate(400px,0)');
-      answer5.css('opacity', '0').css('transform',' translate(400px,0)');
+      answer4.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer5.css('opacity', '0').css('transform',' translate(-400px,0)');
       answer6.css('opacity', '0').css('transform',' translate(400px,0)');
-      answer7.css('opacity', '0').css('transform',' translate(-400px,0)');
+      answer7.css('opacity', '0').css('transform',' translate(400px,0)');
       answer8.css('opacity', '0').css('transform',' translate(-400px,0)');
       answer9.css('opacity', '0').css('transform',' translate(-400px,0)');
       answer10.css('opacity', '0').css('transform',' translate(400px,0)');
       answer11.css('opacity', '0').css('transform',' translate(400px,0)');
       setTimeout(() => {
       answer1.css('transition', '.4s');
-   answer1.css('transform', 'translate(-' + (answerWidth + 10) + 'px,-' +  (answerHeight + (answerHeight / 2))+ 'px');   
+   answer1.css('transform', 'translate(-' + (answerWidth + 10) + 'px,-' +  (35 + answerHeight) + 'px');   
       }, 500);
       }
     }
@@ -1195,7 +1202,7 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
       answer11.css('opacity', '0').css('transform',' translate(400px,0)');
       setTimeout(() => {
         answer1.css('transition', '.4s');
-     answer1.css('transform', 'translate(' + (answerWidth / 2) + 'px,-' +  (answerHeight + answerHeight)+ 'px'); 
+     answer1.css('transform', 'translate(' + (answerWidth / 2) + 'px,-' +  (35 + (answerHeight * 2)) + 'px'); 
         }, 500);
       }
      else if(order == '2') {
@@ -1211,7 +1218,7 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
       answer11.css('opacity', '0').css('transform',' translate(-400px,0)');
       setTimeout(() => {
         answer1.css('transition', '.4s');
-     answer1.css('transform', 'translate(-' + (answerWidth / 2) + 'px,-' +  (answerHeight + answerHeight)+ 'px'); 
+     answer1.css('transform', 'translate(-' + (answerWidth / 2) + 'px,-' +  (35 + (answerHeight * 2)) + 'px'); 
         }, 500);
       }
     }
