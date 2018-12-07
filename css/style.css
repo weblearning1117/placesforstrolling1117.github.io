@@ -229,7 +229,7 @@ animation: sectionBack-2 alternate forwards .5s;
     width: 40px;
     font-size: 30px;
     color: #fff;
-    opacity: 0;
+    opacity: 0; 
     transition: 1s;
     visibility: hidden;
     position: absolute;
@@ -464,6 +464,17 @@ z-index: 1;
     .question6 .answer10 p {
         top: 0;
     }
+   .header .center {
+       justify-content: flex-start;
+    }
+}
+@media (max-width: 588px) {
+   .header .right li {
+       margin: 0;
+     }
+   .header .right {
+       margin-top: -15px;
+     }
 }
 @media (max-width: 570px) {
     .question6 .answer7 {
@@ -483,6 +494,11 @@ z-index: 1;
     .question1 .answer {
         line-height: 16px;
     }
+}
+@media (max-width: 455px) {
+    .header .right {
+        margin-top: -50px;
+      }
 }
 @media (max-width: 474px) {
     .answer {
@@ -530,5 +546,9 @@ z-index: 1;
              }
         .question6 .answer{
             padding: 8px 5px;
+             }
+             .header .right {
+                 margin-top: -10px;
+                 margin-bottom: 0;
              }
 }
