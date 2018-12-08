@@ -81,6 +81,11 @@ var campaign, amount, age, time;
        alert(1);
       }
     });
+    $('.language').on('click', function () { 
+      setTimeout(() => {
+        location.reload()
+      }, 1);
+     })
 $(answers).on('click', function () {
   questionHeight = $(question_6).outerHeight();
   $('.warning').css('bottom', footerHeight + 'px');
