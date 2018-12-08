@@ -84,7 +84,7 @@ var campaign, amount, age, time;
     $('.language').on('click', function () { 
       setTimeout(() => {
         location.reload();
-      }, 1);
+      }, 100);
      })
 $(answers).on('click', function () {
   questionHeight = $(question_6).outerHeight();
