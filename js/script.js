@@ -81,11 +81,11 @@ var campaign, amount, age, time;
        alert(1);
       }
     });
-    $('.language').on('click', function () { 
+/*     $('.language').on('click', function () { 
       setTimeout(() => {
         location.reload();
-      }, 100);
-     })
+      }, 1000);
+     }) */
 $(answers).on('click', function () {
   questionHeight = $(question_6).outerHeight();
   $('.warning').css('bottom', footerHeight + 'px');
