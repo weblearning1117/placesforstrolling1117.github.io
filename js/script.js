@@ -53,8 +53,8 @@ $(document).ready(function () {
 
   $(answers).css('height', answerHeightNoPad + 20);
   if (winWid < 992) {
-     $('.next').css('top', headerHeight - 8 + 'px');
-  $('.main-back').css('top', headerHeight - 8 + 'px');
+     $('.next').css('top', headerHeight - 9 + 'px');
+  $('.main-back').css('top', headerHeight - 9 + 'px');
   }
  
   //переменные для алгоритма
