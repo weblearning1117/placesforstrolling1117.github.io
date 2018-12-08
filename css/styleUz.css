@@ -522,6 +522,11 @@ z-index: 1;
             padding: 8px 10px;
         } 
 }
+@media (max-width: 413px) {
+    .section-2 .answer p {
+        font-size: 14px;
+    }
+}
 @media (max-width: 384px) {
     .answer {
        line-height: 22px;
@@ -561,5 +566,25 @@ z-index: 1;
              .header .right {
                 margin-top: -10px;
                 margin-bottom: 0;
+            }
+             .answer p {
+                font-size: 13px;
+            }
+}
+@media (max-width: 336px) {
+    .answer {
+        padding: 8px 5px;
+        }
+             .answer p {
+                font-size: 12px;
+            }
+            .section-2 .answer p {
+                font-size: 11px;
+            }
+            .warning {
+                padding: 10px 10px;
+                border-top-left-radius: 30px;
+                border-top-right-radius: 30px;
+                font-size: 12px;
             }
 }
