@@ -594,7 +594,9 @@ li {
         padding: 8px 35px;
         font-size: 10px;
     }
-
+    .question5 .answer .fa {
+        font-size: 14px;
+    }
     .question1 .answer {
         line-height: 22px;
     }
@@ -627,6 +629,11 @@ li {
 
     .question6 .answer {
         padding: 8px 10px;
+    }
+}
+@media (max-width: 420px) {
+    .question5 .answer p {
+        font-size: 13px;
     }
 }
 
