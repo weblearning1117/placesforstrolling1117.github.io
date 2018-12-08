@@ -40,7 +40,7 @@ $(document).ready(function () {
   
   var order, many;
   
- var headerHeight = $('.center').outerHeight();
+ var headerHeight = $('.header').outerHeight();
  var htmlHeight = $('html').outerHeight();
  var questionHeight = $(question_6).outerHeight();
  var answerHeight = $(answers).outerHeight();
@@ -53,8 +53,8 @@ $(document).ready(function () {
 
   $(answers).css('height', answerHeightNoPad + 20);
   if (winWid < 992) {
-     $('.next').css('top', headerHeight - 5 + 'px');
-  $('.main-back').css('top', headerHeight - 5 + 'px');
+     $('.next').css('top', headerHeight - 8 + 'px');
+  $('.main-back').css('top', headerHeight - 8 + 'px');
   }
  
   //переменные для алгоритма
@@ -617,21 +617,6 @@ $('.section-1 .answer').on('click', function () {
 
 
 $('.main-back').on('click', function () {
-   
-  /* $('.next').removeClass('active');
-  $('.next').removeClass('disabled');
-  $('.main-back').css('display','none');
-  setTimeout(() => {
-    $('.section-2').addClass('animationBack-1');
-      $('.section-1').addClass('animationBack-2');
-  }, 1000);
-  setTimeout(() => {
-    $('.section-2').addClass('active');
-  }, 300);
-  setTimeout(() => {
-    $('.section-1').removeClass('active');
-  }, 400); */
-  
   $('.main-back').css('display','none');
   
    $('.section-2').addClass('animationBack-1');
