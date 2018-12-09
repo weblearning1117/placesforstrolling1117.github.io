@@ -526,6 +526,9 @@ z-index: 1;
     .section-2 .answer p {
         font-size: 14px;
     }
+    .answer p {
+        font-size: 14px;
+    }
 }
 @media (max-width: 384px) {
     .answer {
