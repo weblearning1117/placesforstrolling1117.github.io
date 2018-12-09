@@ -1,6 +1,8 @@
 $(document).ready(function () {   
   var winWid = window.innerWidth;
- 
+  if (window.location.href.indexOf('reload')==-1) {
+    window.location.replace(window.location.href+'?reload');
+}
   //переменные ответы и вопросы
 
   var questions = ' .question ';
@@ -37,7 +39,7 @@ $(document).ready(function () {
   var back_7 = ' .back7';
   var back_8 = ' .back8';
   var back_9 = ' .back9';
-  
+  var reload = true;
   var order, many;
   
  var headerHeight = $('.header').outerHeight();
@@ -56,23 +58,9 @@ $(document).ready(function () {
      $('.next').css('top', headerHeight - 9 + 'px');
   $('.main-back').css('top', headerHeight - 9 + 'px');
   }
- 
+/*   */
   //переменные для алгоритма
 var campaign, amount, age, time;
-  
-/* $(question_3 + answers).on('click', function () {
-  if($(question_3).hasClass('off')) {
-    $(question_2 + answers).addClass('off');
-    setTimeout(() => {
-      $(question_2 + answers).removeClass('off');
-      $(question_3).removeClass('off');
-    }, 1000);
-  }
-  else {
-    return false;
-  } 
- 
- }) */
  $(document).on('contextmenu', function (e) {
    e.preventDefault();
  });
@@ -81,11 +69,6 @@ var campaign, amount, age, time;
        alert(1);
       }
     });
-/*     $('.language').on('click', function () { 
-      setTimeout(() => {
-        location.reload();
-      }, 1000);
-     }) */
 $(answers).on('click', function () {
   questionHeight = $(question_6).outerHeight();
   $('.warning').css('bottom', footerHeight + 'px');
