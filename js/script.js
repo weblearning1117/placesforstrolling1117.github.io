@@ -1,8 +1,6 @@
 $(document).ready(function () {   
   var winWid = window.innerWidth;
-  if (window.location.href.indexOf('reload')==-1) {
-    window.location.replace(window.location.href+'?reload');
-}
+ 
   //переменные ответы и вопросы
 
   var questions = ' .question ';
@@ -52,7 +50,11 @@ $(document).ready(function () {
  var footerWidth = $('.footer').outerWidth();
  var answerHeightNoPad = $(answer_1).height();
  var answerWidth = $(answers).outerWidth();
-
+ 
+ 
+ if (window.location.href.indexOf('reload')==-1) {
+  window.location.replace(window.location.href+'?reload');
+}
   $(answers).css('height', answerHeightNoPad + 20);
   if (winWid < 992) {
      $('.next').css('top', headerHeight - 9 + 'px');
@@ -73,10 +75,10 @@ $(answers).on('click', function () {
   questionHeight = $(question_6).outerHeight();
   $('.warning').css('bottom', footerHeight + 'px');
   $('.warning').css('left', ((footerWidth / 2) - (warningWidth / 2)) + 'px');
-   /* $(back).addClass('off');
+    $(back).addClass('off');
    setTimeout(() => {
     $(back).removeClass('off');
-   }, 500); */
+   }, 500); 
  })
 $(question_3 + answers).on('click', function () {
     $('.question2.click').addClass('unclick');
