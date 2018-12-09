@@ -424,7 +424,7 @@ $(question_9 + answer_11).on('click', function () {
 
 
 $(back_1).on('click', function () {
-  if (!$(this).hasClass('off')) {
+  if (!$(this).hasClass('off') && !$(this).hasClass('unclick')) {
     age = '';
   $(question_1 + answers).css('visibility', 'visible').css('opacity', '1').css('transform', 'translate(0,0)').removeClass('go-left').removeClass('go-right');    
   $(question_1).removeClass('active');
@@ -439,7 +439,7 @@ $(back_1).on('click', function () {
 })
 
 $(back_2).on('click', function () {
-  if (!$(this).hasClass('off')) {
+  if (!$(this).hasClass('off') && !$(this).hasClass('unclick')) {
      campaign = '';
     $(question_2 + answers).css('visibility', 'visible').css('opacity', '1').css('transform', 'translate(0,0)').removeClass('go-left').removeClass('go-right');    
   $(question_2).removeClass('active');
@@ -456,7 +456,7 @@ $(back_2).on('click', function () {
 
 $(back_3).on('click', function () {
   $(question_3).addClass('off');
-  if (!$(this).hasClass('off')) {
+  if (!$(this).hasClass('off') && !$(this).hasClass('unclick')) {
     amount = '';
     if (campaign == 'single') {
       $(question_3 + answers).css('visibility', 'visible').css('opacity', '1').css('transform', 'translate(0,0)').removeClass('go-left').removeClass('go-right');    
@@ -506,7 +506,7 @@ $(back_3).on('click', function () {
 })
 
 $(back_4).on('click', function () {
-  if (!$(this).hasClass('off')) {
+  if (!$(this).hasClass('off') && !$(this).hasClass('unclick')) {
     time = '';
     $(question_4 + answers).css('visibility', 'visible').css('opacity', '1').css('transform', 'translate(0,0)').removeClass('go-left').removeClass('go-right');    
     $(question_4).removeClass('active');
@@ -521,15 +521,20 @@ $(back_4).on('click', function () {
 })
 
 $(back_5).on('click', function () {
+  if (!$(this).hasClass('off') && !$(this).hasClass('unclick')) {
   $(question_5 + answers).css('visibility', 'visible').css('opacity', '1').css('transform', 'translate(0,0)').removeClass('go-left').removeClass('go-right');    
   $(question_5).removeClass('active');
     $(back_5).css('opacity', '0');
     $(back_5).css('visibility', 'hidden');
    $(question_5).removeClass('active');
   $(question_5).addClass('click');
+  }
+  else {
+    return false;
+  }
 })
 $(back_6).on('click', function () {
-  if (!$(this).hasClass('off')) {
+  if (!$(this).hasClass('off')  && !$(this).hasClass('unclick')) {
     $(question_7).css('visibility', 'hidden');
     $(question_6 + answers).css('visibility', 'visible').css('opacity', '1').css('transform', 'translate(0,0)').removeClass('go-left').removeClass('go-right');    
     $(question_6).removeClass('active');
@@ -577,7 +582,7 @@ $('.section-1 .answer').on('click', function () {
   if ($('.question1').hasClass('active') && $('.question2').hasClass('active') && $('.question3').hasClass('active') && $('.question4').hasClass('active') && $('.next').hasClass('active')) {
     $('.section-1').removeClass('animationBack-2');
     $('.section-2').removeClass('animationBack-1');
-  $('.back').addClass('off');
+  $('.back').addClass('unclick');
   
     setTimeout(() => {
       if ($('.next').hasClass('first')) {
@@ -596,7 +601,7 @@ $('.section-1 .answer').on('click', function () {
       $('.section-2').removeClass('active');
       $('.main-back').css('display','inline');
        $('.footer').addClass('mt-0');
-       $('.back').removeClass('off');
+       $('.back').removeClass('unclick');
     }, 2500)
   }
   else {
