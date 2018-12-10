@@ -6,7 +6,6 @@ body {
     overflow-x: hidden;
     position: relative;
 }
-
 .fixed {
     height: 20px;
 }
@@ -212,7 +211,7 @@ li {
 .main-back {
     position: fixed;
     top: 13%;
-    left: -7%;
+    left: -115px;
     table-layout: auto;
     font-size: 30px;
     color: rgb(75, 92, 243);
@@ -224,13 +223,6 @@ li {
     z-index: 1;
     transition: .6s;
 }
-
-.main-back:hover {
-    cursor: pointer;
-    left: 0;
-    transition: .6s;
-}
-
 .main-back:hover .fa-undo {
     transform: rotate(-360deg);
 }

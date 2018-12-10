@@ -178,7 +178,7 @@ animation: sectionBack-2 alternate forwards .5s;
 .main-back {
     position: fixed;
     top: 13%;
-    left: -5.4%;
+    left: -85px;
     font-size: 30px;
     color: rgb(75, 92, 243);
     background: white;
@@ -187,11 +187,6 @@ animation: sectionBack-2 alternate forwards .5s;
     padding: 0 10px;
     display: none;
     z-index: 1;
-    transition: .6s;
-}
-.main-back:hover {
-    cursor: pointer;
-    left: 0;
     transition: .6s;
 }
 .main-back:hover .fa-undo {
@@ -409,7 +404,7 @@ z-index: 1;
         top: 15px;
     }
 }
-@media (max-width: 992px) {
+@media (max-width: 991px) {
     .back1 {
         top: 20%;
     }
