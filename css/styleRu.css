@@ -6,6 +6,7 @@ body {
     overflow-x: hidden;
     position: relative;
 }
+
 .fixed {
     height: 20px;
 }
@@ -223,6 +224,12 @@ li {
     z-index: 1;
     transition: .6s;
 }
+
+.main-back:hover {
+    cursor: pointer;
+    left: 0;
+}
+
 .main-back:hover .fa-undo {
     transform: rotate(-360deg);
 }
@@ -463,10 +470,6 @@ li {
         font-size: 16px;
     }
 
-    .next {
-        font-size: 20px;
-    }
-
     .warning {
         font-size: 14px;
     }
@@ -586,9 +589,11 @@ li {
         padding: 8px 35px;
         font-size: 10px;
     }
+
     .question5 .answer .fa {
         font-size: 14px;
     }
+
     .question1 .answer {
         line-height: 22px;
     }
@@ -623,6 +628,7 @@ li {
         padding: 8px 10px;
     }
 }
+
 @media (max-width: 420px) {
     .question5 .answer p {
         font-size: 13px;
