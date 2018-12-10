@@ -34,12 +34,9 @@ $(document).ready(function () {
   var back_4 = ' .back4';
   var back_5 = ' .back5';
   var back_6 = ' .back6';
-  var back_7 = ' .back7';
-  var back_8 = ' .back8';
-  var back_9 = ' .back9';
-  var reload = true;
   var order, many;
   
+  var backWidth = $('.main-back-text').outerWidth()
  var headerHeight = $('.header').outerHeight();
  var htmlHeight = $('html').outerHeight();
  var questionHeight = $(question_6).outerHeight();
@@ -50,17 +47,16 @@ $(document).ready(function () {
  var footerWidth = $('.footer').outerWidth();
  var answerHeightNoPad = $(answer_1).height();
  var answerWidth = $(answers).outerWidth();
- 
+ $(answers).css('height', answerHeightNoPad + 20);
  
  if (window.location.href.indexOf('reload')==-1) {
   window.location.replace(window.location.href+'?reload');
 }
-  $(answers).css('height', answerHeightNoPad + 20);
-  if (winWid < 992) {
-     $('.next').css('top', headerHeight - 9 + 'px');
-  $('.main-back').css('top', headerHeight - 9 + 'px');
-  }
-/*   */
+ if (window.location.href.indexOf('reloading')==-1) {
+  window.location.replace(window.location.href+'?reloading');
+}
+  
+
   //переменные для алгоритма
 var campaign, amount, age, time;
  $(document).on('contextmenu', function (e) {
@@ -78,7 +74,7 @@ $(answers).on('click', function () {
     $(back).addClass('off');
    setTimeout(() => {
     $(back).removeClass('off');
-   }, 500); 
+   }, 1000); 
  })
 $(question_3 + answers).on('click', function () {
     $('.question2.click').addClass('unclick');
@@ -682,7 +678,7 @@ function answer (answer1, answer2, answer3, answer4, question, answer, back) {
   answer.css('transition', '1s');
   question.addClass('active');
   question.removeClass('click');
-  if (winWid < 992) {
+  if (winWid < 1200) {
     if (many == '3') {
       if (order == '1') {
         answer2.css('opacity', '0').css('transform',' translate(25%,0)');
@@ -873,7 +869,7 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
   $(question_7).removeClass('click');
   $(question_8).removeClass('click');
   $(question_9).removeClass('click');
-  if (winWid < 992) {
+  if (winWid < 1200) {
     if (many == '3' && row == '1') {
       if (order == '1') {
         answer2.css('opacity', '0').css('transform',' translate(25%,0)');
