@@ -52,12 +52,7 @@ $(document).ready(function () {
  if (window.location.href.indexOf('reload')==-1) {
   window.location.replace(window.location.href+'?reload');
 }
- if (window.location.href.indexOf('reloading')==-1) {
-  window.location.replace(window.location.href+'?reloading');
-}
- if (window.location.href.indexOf('reload')==-1) {
-  window.location.replace(window.location.href+'?reload');
-}
+
   
 if (winWid < 992) {
   $('.next').css('top', headerHeight - 9 + 'px');
