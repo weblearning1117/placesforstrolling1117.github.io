@@ -493,7 +493,10 @@ li {
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
+    .question {
+        margin-top: 20px;
+    }
     .back1 {
         top: 20%;
     }
