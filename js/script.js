@@ -1,6 +1,6 @@
 $(document).ready(function () {   
   var winWid = window.innerWidth;
- 
+
   //переменные ответы и вопросы
 
   var questions = ' .question ';
@@ -34,11 +34,13 @@ $(document).ready(function () {
   var back_4 = ' .back4';
   var back_5 = ' .back5';
   var back_6 = ' .back6';
-  var order, many;
+  var back_7 = ' .back7';
+  var places = '.place';
+  var order, many, placeWidth;
   
-  var backWidth = $('.main-back-text').outerWidth()
  var headerHeight = $('.header').outerHeight();
  var htmlHeight = $('html').outerHeight();
+
  var questionHeight = $(question_6).outerHeight();
  var answerHeight = $(answers).outerHeight();
  var warningHeight = $('.warning').outerHeight();
@@ -48,6 +50,10 @@ $(document).ready(function () {
  var answerHeightNoPad = $(answer_1).height();
  var answerWidth = $(answers).outerWidth();
  $(answers).css('height', answerHeightNoPad + 20);
+ 
+/*  setInterval(function() {
+   placeWidth = $(places).outerWidth();
+}, 1000); */
  
  if (window.location.href.indexOf('reload')==-1) {
   window.location.replace(window.location.href+'?reload');
@@ -417,6 +423,58 @@ $(question_9 + answer_11).on('click', function () {
 })
 
 
+
+
+
+$('.place1').on('click', function () {
+  if ($('.main-place').hasClass('click')) {
+   place($('.place1'), $('.place2'), $('.place3'), $('.place4'), $('.place5'), $('.place6'), $('.places'), $('.back7'), $('.place1 .title'), $('.place1 .description'),$('.place1 .description-small'), $('.place1 .place'));
+  }
+  else {
+    return false;
+  }
+})
+$('.place2').on('click', function () {
+  if ($('.main-place').hasClass('click')) {
+   place($('.place2'), $('.place1'), $('.place3'), $('.place4'), $('.place5'), $('.place6'), $('.places'), $('.back7'), $('.place2 .title'), $('.place2 .description'),$('.place2 .description-small'), $('.place2 .place'));
+  }
+  else {
+    return false;
+  }
+})
+$('.place3').on('click', function () {
+  if ($('.main-place').hasClass('click')) {
+   place($('.place3'), $('.place2'), $('.place1'), $('.place4'), $('.place5'), $('.place6'), $('.places'), $('.back7'), $('.place3 .title'), $('.place3 .description'),$('.place3 .description-small'), $('.place3 .place'));
+  }
+  else {
+    return false;
+  }
+})
+$('.place4').on('click', function () {
+  if ($('.main-place').hasClass('click')) {
+   place($('.place4'), $('.place1'), $('.place2'), $('.place3'), $('.place5'), $('.place6'), $('.places'), $('.back7'), $('.place4 .title'), $('.place4 .description'),$('.place4 .description-small'), $('.place4 .place'));
+  }
+  else {
+    return false;
+  }
+})
+$('.place5').on('click', function () {
+  if ($('.main-place').hasClass('click')) {
+   place($('.place5'), $('.place1'), $('.place2'), $('.place3'), $('.place4'), $('.place6'), $('.places'), $('.back7'), $('.place5 .title'), $('.place5 .description'),$('.place5 .description-small'), $('.place5 .place'));
+  }
+  else {
+    return false;
+  }
+})
+$('.place6').on('click', function () {
+  if ($('.main-place').hasClass('click')) {
+   place($('.place6'), $('.place1'), $('.place2'), $('.place3'), $('.place4'), $('.place5'), $('.places'), $('.back7'), $('.place6 .title'), $('.place6 .description'),$('.place6 .description-small'), $('.place6 .place'));
+  }
+  else {
+    return false;
+  }
+})
+
 /////////////////////////////////////////////////BACK///////////////////////////////////////
 
 
@@ -539,11 +597,37 @@ $(back_6).on('click', function () {
       $(back_6).css('opacity', '0');
       $(back_6).css('visibility', 'hidden');
       $(back_6).css('display', 'block');
-     $(question_6).removeClass('active');
     $(question_6).addClass('click');
     $(question_7).addClass('click');
     $(question_8).addClass('click');
     $(question_9).addClass('click');
+  }
+  else {
+    return false;
+  }
+})
+
+
+
+$(back_7).on('click', function () {
+  if (!$(this).hasClass('off')  && !$(this).hasClass('unclick')) {
+    $('.main-place').addClass('click');
+    $('.main-place').css('visibility', 'hidden');
+    $('.places').css('visibility', 'visible').css('opacity', '1').css('transform', 'translate(0,0)').removeClass('go-left').removeClass('go-right').css('border-radius', '48%');    
+    $('.places .place').css('border-radius', '48%');    
+    // $(question_6).removeClass('active');
+      $(back_7).css('opacity', '0');
+      $(back_7).css('visibility', 'hidden');
+      $(back_7).css('display', 'block');
+$('.description').slideUp(500);
+setTimeout(() => {
+  $('.description-small').css('display', 'inline');
+  $('.description').css('display', 'none')
+}, 350);
+$('.title').css('font-size', '25px');
+$(places).css('width', (placeWidth) + 'px');
+$(places).css('height', (placeHeight) + 'px');
+$(places).css('transform', 'translate(0)');
   }
   else {
     return false;
@@ -573,13 +657,21 @@ $('.section-1 .answer').on('click', function () {
   
   if ($('.question1').hasClass('active') && $('.question2').hasClass('active') && $('.question3').hasClass('active') && $('.question4').hasClass('active')) {
     $('.warning').slideUp(600);
-     
-  
   } 
   
   if ($('.question1').hasClass('active') && $('.question2').hasClass('active') && $('.question3').hasClass('active') && $('.question4').hasClass('active') && $('.next').hasClass('active')) {
-    $('.section-1').removeClass('animationBack-2');
-    $('.section-2').removeClass('animationBack-1');
+    if($('.next').hasClass('click') && $('.next').hasClass('first')) {
+      ahead($('.section-1'), $('.section-2'), 1000);
+      $(this).removeClass('click');
+      $(this).removeClass('first');
+      setTimeout(() => {
+        $(this).addClass('click');
+      }, 1500);
+    }
+    else {
+      return false;
+    }
+   
   $('.back').addClass('unclick');
   
     setTimeout(() => {
@@ -590,17 +682,6 @@ $('.section-1 .answer').on('click', function () {
       $('.first').removeClass('first');
       }
     }, 600)
-    setTimeout(() => {
-      $('.section-1').addClass('animation-1');
-      $('.section-2').addClass('animation-2');
-    }, 1400)
-    setTimeout(() => {
-      $('.section-1').addClass('active');
-      $('.section-2').removeClass('active');
-      $('.main-back').css('display','inline');
-       $('.footer').addClass('mt-0');
-       $('.back').removeClass('unclick');
-    }, 2500)
   }
   else {
     return false;
@@ -610,24 +691,30 @@ $('.section-1 .answer').on('click', function () {
 
 
 $('.main-back').on('click', function () {
-  $('.main-back').css('display','none');
-  
-   $('.section-2').addClass('animationBack-1');
-  setTimeout(() => {
-    $('.footer').removeClass('mt-0'); 
-    $('.section-1').removeClass('active');
-   $('.section-1').addClass('animationBack-2');
-   $('.next').removeClass('active');
-  $('.next').removeClass('disabled');
-  }, 500);
-  setTimeout(() => {
-    $('.section-2').addClass('active');
-  }, 499);
-
- 
-  
-  
-  
+ if(!$('.section-2').hasClass('active')) {
+   if($('.main-back').hasClass('click')) {
+    prev($('.section-1'), $('.section-2'))
+    $(this).css('display', 'none').removeClass('click');
+    setTimeout(() => {
+      $(this).addClass('click');
+    }, 1500);
+   }
+ else {
+   return false;
+ }
+ }
+ else {
+  if($('.main-back').hasClass('click')) {
+    prev($('.section-2'), $('.section-3'))
+    $(this).removeClass('click');
+    setTimeout(() => {
+      $(this).addClass('click');
+    }, 1500);
+   }
+ else {
+   return false;
+ }
+ } 
 });
 $('.next').on('click', function () {
  
@@ -636,23 +723,50 @@ $('.next').on('click', function () {
   }
   if ($('.question1').hasClass('active') && $('.question2').hasClass('active') && $('.question3').hasClass('active') && $('.question4').hasClass('active') && $('.next').hasClass('active')) {
     
-    $('.section-1').removeClass('animationBack-2');
-  $('.section-2').removeClass('animationBack-1');
-  $('.next').addClass('active').addClass('disabled');
- 
-      $('.section-1').addClass('animation-1');
-      $('.section-2').addClass('animation-2');
-   
-    setTimeout(() => {
-      $('.section-1').addClass('active');
-      $('.section-2').removeClass('active');
-      $('.main-back').css('display','inline');
-       $('.footer').addClass('mt-0');
-    }, 500)
+    if(!$('.section-2').hasClass('active')) {
+      if($('.next').hasClass('click')) {
+        if ($(question_5).hasClass('active') && $(question_6).hasClass('active')){
+              ahead($('.section-2'), $('.section-3'), 0)  
+              $('.warning').slideUp(600); 
+              $(this).css('display', 'none')
+              $(this).removeClass('click');
+              setTimeout(() => {
+                $(this).addClass('click');
+              }, 1500);
+        }
+        else {
+          $(function() {
+            $('html, body').animate({
+              scrollTop: htmlHeight
+            }, 600); 
+          })
+          setTimeout(() => {
+            $('.warning').slideDown(500);
+          }, 400);
+        }  
+      }
+      else {
+        return false;
+      }
+     
+     
+     }
+     else {
+      if($('.next').hasClass('click')) {
+        ahead($('.section-1'), $('.section-2'),0);
+        $(this).removeClass('click');
+        setTimeout(() => {
+          $(this).addClass('click');
+        }, 1500);
+      }
+      else {
+        return false;
+      }
+     }
+
   }
  else if (!$('.question1').hasClass('active') || !$('.question2').hasClass('active') || !$('.question3').hasClass('active') || !$('.question4').hasClass('active') || !$('.next').hasClass('active')){
   $(function() {
-   
     $('html, body').animate({
       scrollTop: htmlHeight
     }, 600);
@@ -664,16 +778,154 @@ $('.next').on('click', function () {
  }
 });
 
+$(answers).on('click', function () {
+  if ($(question_1).hasClass('active') && $(question_2).hasClass('active') && $(question_3).hasClass('active') && $(question_4).hasClass('active') && $(question_5).hasClass('active') && $(question_6).hasClass('active')) {
+    if($('.next').hasClass('click') && $('.next').hasClass('second')) {
+      ahead($('.section-2'), $('.section-3'), 1000);
+      $('.next').removeClass('click');
+      $('.next').removeClass('second');
+      setTimeout(() => {
+        $('.next').addClass('click'); 
+        placeWidth = $(places).outerWidth();
+        placeBlockWidth = $('.places').outerWidth();
+        placeHeight = $(places).outerHeight();
+        placeBlockHeight = $('.places').outerHeight();
+      }, 1500);
+    }
+    else {
+      $('.warning').slideUp(500);
+    }
+}
+})
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /* -----------------------------------------------------ФУНКЦИИ------------------------------------------------------------------------- */
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+function place(place1, place2, place3, place4, place5, place6, places, back, title, description, smallDescription, place) {
+  order = place1.attr('data-order');
+  many = place1.attr('data-many');
+  row = place1.attr('data-row');
+  places.css('transition', '1s');
+  $('.main-place').removeClass('click');
+  if (winWid > 992) {
+    if (order == '1') {
+      place2.css('opacity', '0').css('transform',' translate(25%,0)');
+      place3.css('opacity', '0').css('transform',' translate(25%,0)');
+      place4.css('opacity', '0').css('transform',' translate(-25%,0)');
+      place5.css('opacity', '0').css('transform',' translateY(10%)');
+      place6.css('opacity', '0').css('transform',' translate(25%,0)');
+        setTimeout(() => {
+        place1.css('transition', '.4s');
+     place1.css('transform', 'translate(' + (placeBlockWidth + 20) + 'px,0)');  
+        }, 500);
+}
+   else if (order == '2') {
+      place2.css('opacity', '0').css('transform',' translate(-25%,0)');
+      place3.css('opacity', '0').css('transform',' translate(25%,0)');
+      place4.css('opacity', '0').css('transform',' translate(-25%,0)');
+      place5.css('opacity', '0').css('transform',' translateY(10%)');
+      place6.css('opacity', '0').css('transform',' translate(25%,0)');
+        setTimeout(() => {
+        place1.css('transition', '.4s');
+        }, 500);
+}
+   else if (order == '3') {
+      place2.css('opacity', '0').css('transform',' translate(-25%,0)');
+      place3.css('opacity', '0').css('transform',' translate(-25%,0)');
+      place4.css('opacity', '0').css('transform',' translate(-25%,0)');
+      place5.css('opacity', '0').css('transform',' translateY(10%)');
+      place6.css('opacity', '0').css('transform',' translate(25%,0)');
+        setTimeout(() => {
+        place1.css('transition', '.4s');
+        place1.css('transform', 'translate(-' + (placeBlockWidth + 20) + 'px,0)');  
+        }, 500);
+}
+   else if (order == '4') {
+      place2.css('opacity', '0').css('transform',' translate(-25%,0)');
+      place3.css('opacity', '0').css('transform',' translateY(-25%,0)');
+      place4.css('opacity', '0').css('transform',' translate(25%,0)');
+      place5.css('opacity', '0').css('transform',' translate(25%)');
+      place6.css('opacity', '0').css('transform',' translate(25%,0)');
+        setTimeout(() => {
+        place1.css('transition', '.4s');
+        place1.css('transform', 'translate(' + (placeBlockWidth + 20) + 'px,' + -placeBlockHeight + 'px)');  
+        }, 500);
+}
+   else if (order == '5') {
+      place2.css('opacity', '0').css('transform',' translate(-25%,0)');
+      place3.css('opacity', '0').css('transform',' translateY(-25%,0)');
+      place4.css('opacity', '0').css('transform',' translate(25%,0)');
+      place5.css('opacity', '0').css('transform',' translate(-25%)');
+      place6.css('opacity', '0').css('transform',' translate(25%,0)');
+        setTimeout(() => {
+        place1.css('transition', '.4s');
+        place1.css('transform', 'translate(0,' + -placeBlockHeight + 'px)');  
+        }, 500);
+}
+   else if (order == '6') {
+      place2.css('opacity', '0').css('transform',' translate(-25%,0)');
+      place3.css('opacity', '0').css('transform',' translateY(-25%,0)');
+      place4.css('opacity', '0').css('transform',' translate(25%,0)');
+      place5.css('opacity', '0').css('transform',' translate(-25%)');
+      place6.css('opacity', '0').css('transform',' translate(-25%,0)');
+        setTimeout(() => {
+        place1.css('transition', '.4s');
+        place1.css('transform', 'translate(-' + (placeBlockWidth + 20) + 'px,' + -placeBlockHeight + 'px)');  
+        }, 500);
+}
+    title.css('font-size', '40px');
+    place.css('width', (placeWidth + 40) + 'px');
+    place.css('height', (placeHeight + 40) + 'px');
+    place.css('transform', 'translate(-30px)');
+    description.css('width', winWid / 2);
+    description.css('transform', 'translate(-' + (winWid / 4)+ 'px)');
+    //padding: 90px 35px;
+  }
+  setTimeout(() => {
+    place1.css('transition', '0s');
+    back.css('visibility', 'visible');
+    description.slideDown();
+   smallDescription.css('display', 'none');
+  }, 1000);
+   setTimeout(() => {
+    place2.css('visibility', 'hidden');
+    place3.css('visibility', 'hidden');
+    place4.css('visibility', 'hidden');
+    place5.css('visibility', 'hidden');
+    place6.css('visibility', 'hidden');
+  }, 999);
+  setTimeout(() => {
+    back.css('opacity','1');
+    place1.css('transition', '1s');
+  }, 1100);
+}
+
 
 
 
 
 
 function answer (answer1, answer2, answer3, answer4, question, answer, back) {
- 
-   
   order = answer1.attr('data-order');
   row = question.attr('data-row');
   many = question.attr('data-many');
@@ -813,7 +1065,7 @@ function answer (answer1, answer2, answer3, answer4, question, answer, back) {
       }
     }
   }
-
+  
   setTimeout(() => {
    answer1.css('transition', '0s');
    back.css('visibility', 'visible')
@@ -827,41 +1079,8 @@ function answer (answer1, answer2, answer3, answer4, question, answer, back) {
    back.css('opacity','1');
    answer1.css('transition', '1s');
  }, 1100);
-  
-  
-
-  
-  
-  
-  
-  
-  
- /*  answer1.css('opacity', '0');
-  answer2.css('opacity', '0');
-  answer3.css('opacity', '0');
-  answer4.css('opacity', '0');
-  question.addClass('active');
-  question.removeClass('click');
-  setTimeout(() => {
-    answer1.css('display', 'block');
-  back.css('display', 'block');
-  back.css('transition', '1s');
-  back.css('opacity', '1');
-  answer1.css('opacity', '1');
-  answer2.css('opacity', '0');
-  answer3.css('opacity', '0');
-  answer4.css('opacity', '0');
-  answer2.css('display', 'none');
-  answer3.css('display', 'none');
-  answer4.css('display', 'none');
-  }, 1000); */
 }
-
-
-
-
 function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8,answer9,answer10,answer11,question,answer, back) {
-  
   order = answer1.attr('data-order');
   many = question.attr('data-many');
   row = question.attr('data-row');
@@ -953,7 +1172,6 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
         answer11.css('opacity', '0').css('transform',' translate(25%,0)');
         setTimeout(() => {
         answer1.css('transition', '.5s');
-      /*   answer1.css('transform', 'translateY(' + (answerHeight + (answerHeight / 2)) + 'px)'); */
         }, 500);
       }
      else if (order == '3') {
@@ -1058,15 +1276,6 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
       }
     }
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
   else {
     if (many == '3' && row == '1') {
       if (order == '1') {
@@ -1232,7 +1441,7 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
       answer11.css('opacity', '0').css('transform',' translate(100px,0)');
       setTimeout(() => {
         answer1.css('transition', '.4s');
-     answer1.css('transform', 'translate(' + (answerWidth / 2) + 'px,-' +  (70 + (answerHeight * 2)) + 'px'); 
+     answer1.css('transform', 'translate(' + (answerWidth / 2) + 'px,-' +  (70 + (answerHeight * 2)) + 'px');
         }, 500);
       }
      else if(order == '2') {
@@ -1253,7 +1462,6 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
       }
     }
   }
-
   setTimeout(() => {
    answer1.css('transition', '0s');
    answer1.css('z-index', '999');
@@ -1277,69 +1485,46 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
    back.css('opacity','1');
    answer1.css('transition', '1s');
  }, 1100);
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  /* 
-  answer1.css('opacity', '0');
-  answer2.css('opacity', '0');
-  answer3.css('opacity', '0');
-  answer4.css('opacity', '0');
-  answer5.css('opacity', '0');
-  answer6.css('opacity', '0');
-  answer7.css('opacity', '0');
-  answer8.css('opacity', '0');
-  answer9.css('opacity', '0');
-  answer10.css('opacity', '0');
-  answer11.css('opacity', '0');
-  question.addClass('active').removeClass('click');
-   
+}
+function ahead(section_1, section_2, i) {
   setTimeout(() => {
-    answer1.css('transition', '0s');
-    answer1.css('opacity', '1');
-    
-    answer1.css('margin-top', questionHeight * 3 / 2 - answerHeight);
-    answer1.css('margin-bottom', questionHeight * 3 / 2);
-    answer1.css('height', answerHeight);
-    answer1.addClass('zxc');
-    back.css('display', 'block');
-  back.css('transition', '1s');
-  back.css('opacity', '1');
-  back.css('margin-top', questionHeight * 3 / 2 - answerHeight);
-  }, 999);
+    section_1.css('transition', '.4s');
+    section_1.css('transform', 'translate(-600px,0)');
+    section_1.css('opacity', '0'); 
+    section_2.css('transform', 'translate(200px,0)');
+    setTimeout(() => {
+  section_1.addClass('active');
+  section_2.removeClass('active');
+  section_2.css('transition', '.5s');
+  section_2.css('opacity', '0');
+}, 400);
+    setTimeout(() => {
+ section_2.css('transform', 'translate(0,0)');
+ section_2.css('opacity', '1');
+ $('.main-back').css('display','inline');
+ $('.back').removeClass('unclick');
+}, 450);
+  }, i);
+}
+function prev(section_1, section_2) {
+  section_2.css('transition', '.4s');
+  section_2.css('transform', 'translate(600px,0)');
+  section_2.css('opacity', '0'); 
+  section_1.css('transform', 'translate(-200px,0)');
   setTimeout(() => {
-  answer2.css('display', 'none');
-  answer3.css('display', 'none');
-  answer4.css('display', 'none');
-  answer5.css('display', 'none');
-  answer6.css('display', 'none');
-  answer7.css('display', 'none');
-  answer8.css('display', 'none');
-  answer9.css('display', 'none');
-  answer10.css('display', 'none');
-  answer11.css('display', 'none');
-  }, 1000);
+section_2.addClass('active');
+section_1.removeClass('active');
+section_1.css('transition', '.5s');
+section_1.css('opacity', '0');
+}, 400);
   setTimeout(() => {
-    answer1.css('transition', '1s');
-  }, 1100);*/
-} 
+section_1.css('transform', 'translate(0,0)');
+section_1.css('opacity', '1');
+$('.next').css('display','inline');
+$('.footer').addClass('mt-0');
+$('.back').removeClass('unclick');
+}, 450);
+}
 });
 
 
