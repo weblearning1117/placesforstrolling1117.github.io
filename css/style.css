@@ -5,7 +5,9 @@ body {
     font-weight: 300;
     overflow-x: hidden;
     position: relative;
+    transition: 1s;
 }
+
 
 .fixed {
     height: 20px;
@@ -74,11 +76,6 @@ li {
 .container {
     min-height: 82vh !important;
 }
-
-.section-2 {
-    min-height: 85vh !important;
-}
-
 .header .right {
     display: flex;
     list-style: none;
@@ -165,10 +162,11 @@ li {
 
 .section-2 {
     display: block;
-    position: relative;
-    right: -200px;
-    opacity: 0;
 }
+.section-2.active {
+   display: none;
+}
+
 
 .section-2 .question {
     margin-top: 17px;
@@ -179,7 +177,7 @@ li {
 }
 
 .section-2 .question9 .answer {
-    margin-bottom: 40px;
+    margin-bottom: 69px;
 }
 
 .section-2 .question5 .answer {
@@ -362,91 +360,6 @@ li {
     cursor: pointer;
     margin-right: 15px;
 }
-
-.go-left {
-    animation: go-left alternate forwards 1s;
-}
-
-.go-right {
-    animation: go-right alternate forwards 1s;
-}
-
-@keyframes section-1 {
-    100% {
-        opacity: 0;
-        right: 650px;
-    }
-}
-
-@keyframes section-2 {
-    60% {
-        right: 50px;
-    }
-
-    100% {
-        right: 0;
-        opacity: 1;
-    }
-}
-
-@keyframes sectionBack-1 {
-    0% {
-        left: 0;
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-        left: 400px;
-    }
-}
-
-@keyframes sectionBack-2 {
-    0% {
-        opacity: 0;
-        left: -200px;
-    }
-
-    50% {
-        left: 100px;
-    }
-
-    100% {
-        left: 0;
-        opacity: 1;
-    }
-}
-
-@keyframes exclamation {
-    0% {
-        bottom: 0;
-    }
-
-    5% {
-        bottom: 10px;
-    }
-
-    10% {
-        bottom: 0;
-    }
-
-    20% {
-        bottom: 6px;
-    }
-
-    22% {
-        bottom: 0;
-    }
-
-    35% {
-        bottom: 3px;
-    }
-
-    37% {
-        bottom: 0;
-    }
-}
-
 @media (max-width: 1200px) {
     .question h2 {
         font-size: 25px;
@@ -493,6 +406,9 @@ li {
 
 @media (max-width: 991px) {
     .question {
+        margin-top: 20px;
+    }
+    .section-2 .question {
         margin-top: 20px;
     }
     .back1 {
