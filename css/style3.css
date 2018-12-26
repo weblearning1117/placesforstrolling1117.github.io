@@ -48,6 +48,9 @@ height: 160px;
     background: url('../img/park6.jpg') center center  no-repeat;
         background-size: 100%;
 }
+.place6 .description-small {
+   margin-bottom: 30px;
+}
 .section-3 .places {
     text-align: center;
 }
@@ -69,7 +72,9 @@ height: 160px;
     color: #fff;
     font-size: 20px;
     font-weight: 400;
-    transition: 1s;
+}
+.places .description-small:hover {
+    cursor: default;
 }
 .place6 .description {
     margin-bottom: 15px;
@@ -79,4 +84,28 @@ height: 160px;
 }
 .places .description:hover {
     cursor: default;
+}
+.back7 {
+    right: 0!important;
+} 
+.main-place .extra {
+    position: absolute;
+    background: #fff;
+    text-align: center;
+    border-radius: 48%;
+    transition: 1s;
+    margin-top: 30px;
+    border: 1px solid #fff;
+    box-shadow: 0 0 12px #fff; 
+}
+.main-place .place-extra-1 {
+ left: 200%
+}
+.main-place .place-extra-2 {
+ right: 200%
+}
+.main-place .extra:hover {
+    cursor: pointer;
+    box-shadow: 0 0 12px #000; 
+    background-size: 120%!important;
 }
