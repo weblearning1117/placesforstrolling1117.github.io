@@ -631,6 +631,7 @@ $('.place-extra-1').css('left', '200%');
 $('.place-extra-2').css('right', '200%');
 $('.extra').css('visibility', 'visible');
 $('.main-back').css('display', 'block');
+$('.title').removeClass('titleActive');
   }
   else {
     return false;
@@ -797,8 +798,15 @@ $(answers).on('click', function () {
         placeBlockWidth = $('.places').outerWidth();
         placeHeight = $(places).outerHeight();
         placeBlockHeight = $('.places').outerHeight();
-        $('.extra').css('width', ((placeWidth / 3) * 2.9) + 'px');
+        if (winWid > 991) {
+           $('.extra').css('width', ((placeWidth / 3) * 2.9) + 'px');
         $('.extra').css('height', ((placeHeight / 3) * 2.999) + 'px');
+        }
+        else {
+          $('.extra').css('width', ((placeWidth / 3) * 1.5) + 'px');
+          $('.extra').css('height', ((placeHeight / 3) * 1.5) + 'px');
+        }
+      
       }, 1500);
     }
     else {
@@ -836,7 +844,12 @@ function place(place1, place2, place3, place4, place5, place6, places, back, tit
   row = place1.attr('data-row');
   places.css('transition', '1s');
   $('.main-place').removeClass('click');
-  if (winWid > 992) {
+  $(function() {
+    $('html, body').animate({
+      scrollTop: -(htmlHeight - headerHeight)
+    }, 600); 
+  })
+  if (winWid > 991) {
     if (order == '1') {
       place2.css('opacity', '0').css('transform',' translate(25%,0)');
       place3.css('opacity', '0').css('transform',' translate(25%,0)');
@@ -902,7 +915,7 @@ function place(place1, place2, place3, place4, place5, place6, places, back, tit
         place1.css('transform', 'translate(-' + (placeBlockWidth) + 'px,' + -placeBlockHeight + 'px)');  
         }, 500);
 }
-    title.css('font-size', '35px');
+    title.addClass('titleActive');
     place.css('width', (placeWidth + 80) + 'px');
     place.css('height', (placeHeight + 80) + 'px');
     place.css('transform', 'translate(-40px)');
@@ -928,10 +941,10 @@ function place(place1, place2, place3, place4, place5, place6, places, back, tit
 }
    else if (order == '2') {
       place2.css('opacity', '0').css('transform',' translate(-25%,0)');
-      place3.css('opacity', '0').css('transform',' translate(25%,0)');
-      place4.css('opacity', '0').css('transform',' translate(-25%,0)');
-      place5.css('opacity', '0').css('transform',' translate(25%,0)');
-      place6.css('opacity', '0').css('transform',' translate(-25%,0)');
+      place3.css('opacity', '0').css('transform',' translate(-25%,0)');
+      place4.css('opacity', '0').css('transform',' translate(25%,0)');
+      place5.css('opacity', '0').css('transform',' translate(-25%,0)');
+      place6.css('opacity', '0').css('transform',' translate(25%,0)');
         setTimeout(() => {
         place1.css('transition', '.4s');
         place1.css('transform', 'translate(' + (-placeBlockWidth / 2) + 'px,0)');  
@@ -981,10 +994,10 @@ function place(place1, place2, place3, place4, place5, place6, places, back, tit
         place1.css('transform', 'translate(-' + (placeBlockWidth / 2) + 'px,' + (-placeBlockHeight * 2) + 'px)'); 
         }, 500);
 }
-    title.css('font-size', '35px');
-    place.css('width', (placeWidth + 80) + 'px');
-    place.css('height', (placeHeight + 80) + 'px');
-    place.css('transform', 'translate(-40px)');
+    title.addClass('titleActive');
+    place.css('width', (placeWidth - 40) + 'px');
+    place.css('height', (placeHeight - 40) + 'px');
+    place.css('transform', 'translate(20px)');
     description.css('width', winWid / 2);
     var descriptionWidth = description.outerWidth();
     description.css('transform', 'translate(-' + ((descriptionWidth - placeWidth) / 2) + 'px)');
@@ -1026,7 +1039,7 @@ function answer (answer1, answer2, answer3, answer4, question, answer, back) {
   answer.css('transition', '1s');
   question.addClass('active');
   question.removeClass('click');
-  if (winWid < 992) {
+  if (winWid < 991) {
     if (many == '3') {
       if (order == '1') {
         answer2.css('opacity', '0').css('transform',' translate(25%,0)');
@@ -1184,7 +1197,7 @@ function answer2(answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8
   $(question_7).removeClass('click');
   $(question_8).removeClass('click');
   $(question_9).removeClass('click');
-  if (winWid < 992) {
+  if (winWid < 991) {
     if (many == '3' && row == '1') {
       if (order == '1') {
         answer2.css('opacity', '0').css('transform',' translate(25%,0)');
@@ -1619,6 +1632,8 @@ $('.footer').addClass('mt-0');
 $('.back').removeClass('unclick');
 }, 450);
 }
+
+
 });
 
 
